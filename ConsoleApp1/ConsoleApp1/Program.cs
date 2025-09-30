@@ -260,6 +260,7 @@ namespace ConsoleApp1
                                 break;
                             case 10:
                                 Console.WriteLine(" Вывод дней недели, начиная с дня x");
+                                Console.WriteLine(" Введите день недели x:");
                                 string day = Console.ReadLine();
                                 Console.WriteLine(" Результат:");
                                 Methods1.printDays(day);
@@ -374,7 +375,7 @@ namespace ConsoleApp1
                                 Console.WriteLine(" Добавление числа x в массив arr в позицию pos");
                                 while (true)
                                 {
-                                    Console.WriteLine(" Введите массив arr (через пробел) из целых чисел, целое число x и челое число pos:");
+                                    Console.WriteLine(" Введите массив arr (через пробел) из целых чисел, целое число x и целое число pos:");
                                     try
                                     {
                                         int[] arr = Methods1.inputArr(Console.ReadLine());
@@ -414,7 +415,7 @@ namespace ConsoleApp1
                                 Console.WriteLine(" Объединение двух массивов");
                                 while (true)
                                 {
-                                    Console.WriteLine(" Введите сначала массив arr1 (через пробел) из целых чисел, а затем arr2");
+                                    Console.WriteLine(" Введите сначала массив arr1 (через пробел) из целых чисел, а затем arr2:");
                                     try
                                     {
                                         int[] arr1 = Methods1.inputArr(Console.ReadLine());
