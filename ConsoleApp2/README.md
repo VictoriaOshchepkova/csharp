@@ -127,8 +127,104 @@
 
 # Тестирование
 ## Тесты для Задания 1.3
+<img width="485" height="194" alt="image" src="https://github.com/user-attachments/assets/545f0834-8b54-4be9-b6b4-fa9b602a6386" />  
+<img width="493" height="116" alt="image" src="https://github.com/user-attachments/assets/98975f5b-623a-4ffc-83f0-58d832c0567c" />  
+
 ## Тесты для Задания 1.5
+<img width="319" height="132" alt="image" src="https://github.com/user-attachments/assets/29ed9e69-c589-4f1d-a22f-2d926bca4b47" />  \
+<img width="316" height="52" alt="image" src="https://github.com/user-attachments/assets/185728f2-4250-4325-ba5b-e83ca100748c" />  \
+<img width="319" height="146" alt="image" src="https://github.com/user-attachments/assets/201644fd-0dee-47e6-98ae-c72bea2709da" />  
+  
 ## Тесты для Задания 2.4
+Код:
+```
+Department itDepartment = new Department("IT");
+Employee employee1 = new Employee("Петров", itDepartment);
+Employee employee2 = new Employee("Козлов", itDepartment);
+Employee employee3 = new Employee("Сидоров", itDepartment);
+itDepartment.Manager = employee2;
+
+Console.WriteLine(employee1);
+Console.WriteLine(employee2);
+Console.WriteLine(employee3);
+```
+Вывод:\
+<img width="449" height="66" alt="image" src="https://github.com/user-attachments/assets/aac8810e-5033-4fe7-b016-01f90cf9cc5c" />
+
 ## Тесты для Задания 3.4
+Код:
+```
+DepartmentExpanded itDepartmentEx = new DepartmentExpanded("IT");
+EmployeeExpanded employeeEx1 = new EmployeeExpanded("Петров", itDepartmentEx);
+EmployeeExpanded employeeEx2 = new EmployeeExpanded("Козлов", itDepartmentEx);
+EmployeeExpanded employeeEx3 = new EmployeeExpanded("Сидоров", itDepartmentEx);
+itDepartmentEx.Manager = employeeEx2;
+
+Console.WriteLine(employeeEx1);
+Console.WriteLine(employeeEx2);
+Console.WriteLine(employeeEx3);
+
+Console.WriteLine($"Список всех сотрудников отдела {employeeEx1.Department.Name}, в котором работает {employeeEx1.Name}:");
+for (int i = 0; i < employeeEx1.Department.EmployeeCount; i++)
+{
+Console.WriteLine($"- {employeeEx1.Department.Employees[i].Name}");
+}
+```
+Вывод:\
+<img width="491" height="130" alt="image" src="https://github.com/user-attachments/assets/ef90afe3-9e93-4b85-8df2-0371a979bb07" />
+
 ## Тесты для Задания 4.5
+<img width="496" height="211" alt="image" src="https://github.com/user-attachments/assets/ac523a15-0fce-4437-a002-37841d0dc3c5" />\
+<img width="189" height="118" alt="image" src="https://github.com/user-attachments/assets/1bbfe028-574e-4cf0-8890-47918d680674" />\
+<img width="258" height="114" alt="image" src="https://github.com/user-attachments/assets/207d5207-6b5c-4ea2-afd4-8951e460e62c" />\
+<img width="163" height="115" alt="image" src="https://github.com/user-attachments/assets/b977535e-e842-479e-829c-3384312f9e5c" />\
+<img width="167" height="114" alt="image" src="https://github.com/user-attachments/assets/bb9ab941-4e9f-4c3d-a4d1-9d56c0d245b9" />\
+<img width="164" height="113" alt="image" src="https://github.com/user-attachments/assets/ea307780-5f01-437b-ba9c-02c67ea49b0e" />\
+<img width="166" height="114" alt="image" src="https://github.com/user-attachments/assets/5cb0ff76-724d-4c2b-84b7-8119168dd413" />
+
 ## Тесты для Задания 5.5
+Код:
+```
+Fraction f1 = new Fraction(1, 2);
+Fraction f2 = new Fraction(2, 3);
+Fraction f3 = new Fraction(3, 4);
+Fraction f4 = new Fraction(4, 5);
+
+Console.WriteLine(" Созданные дроби:");
+Console.WriteLine($"f1 = {f1}");
+Console.WriteLine($"f2 = {f2}");
+Console.WriteLine($"f3 = {f3}");
+Console.WriteLine($"f4 = {f4}"); 
+
+Console.WriteLine(" Примеры операций:");
+
+Fraction result2 = f1.Sum(f2);
+Console.WriteLine($"{f1} + {f2} = {result2}");
+
+Fraction result3 = f3.Minus(f4);
+Console.WriteLine($"{f3} - {f4} = {result3}");
+
+Fraction result1 = f1.Multiply(f2);
+Console.WriteLine($"{f1} * {f2} = {result1}");
+
+Fraction result4 = f3.Div(f4);
+Console.WriteLine($"{f3} / {f4} = {result4}");
+
+Fraction result5 = f1.Sum(2);
+Console.WriteLine($"{f1} + 2 = {result5}");
+
+Fraction result7 = f3.Minus(1);
+Console.WriteLine($"{f3} - 1 = {result7}");
+
+Fraction result6 = f2.Multiply(3);
+Console.WriteLine($"{f2} * 3 = {result6}");
+
+Fraction result8 = f4.Div(2);
+Console.WriteLine($"{f4} / 2 = {result8}");
+
+Console.WriteLine(" Вычисление f1.Sum(f2).Div(f3).Minus(5):");
+Fraction result9 = f1.Sum(f2).Div(f3).Minus(5);
+Console.WriteLine($"({f1}).Sum({f2}).Div({f3}).Minus(5) = {result9}");
+``` 
+Вывод:\
+<img width="323" height="275" alt="image" src="https://github.com/user-attachments/assets/b80982d5-b5bd-40ef-8014-a9307fe0e96b" />
