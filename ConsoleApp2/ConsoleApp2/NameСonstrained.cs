@@ -46,6 +46,14 @@ namespace ConsoleApp2
                 patronymic = value;
             }
         }
+
+        public NameСonstrained()
+        {
+            firstName = "Иван";
+            lastName = "Иванов";
+            patronymic = "Иванович";
+        }
+
         public NameСonstrained(string firstName)
         {
             if (string.IsNullOrEmpty(firstName))

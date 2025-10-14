@@ -2,7 +2,6 @@
 
 namespace ConsoleApp2
 {
-    // Задание 3.4
     public class DepartmentExpanded
     {
         string name;

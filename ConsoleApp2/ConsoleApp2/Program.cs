@@ -129,10 +129,10 @@ namespace ConsoleApp2
                         Console.WriteLine(employeeEx2);
                         Console.WriteLine(employeeEx3);
 
-                        Console.WriteLine($"Список всех сотрудников отдела {employeeEx1.department.Name}, в котором работает {employeeEx1.name}:");
-                        for (int i = 0; i < employeeEx1.department.EmployeeCount; i++)
+                        Console.WriteLine($"Список всех сотрудников отдела {employeeEx1.Department.Name}, в котором работает {employeeEx1.Name}:");
+                        for (int i = 0; i < employeeEx1.Department.EmployeeCount; i++)
                         {
-                            Console.WriteLine($"- {itDepartmentEx.Employees[i].name}");
+                            Console.WriteLine($"- {itDepartmentEx.Employees[i].Name}");
                         }
                         break;
                     case 5:

@@ -4,8 +4,8 @@ namespace ConsoleApp2
 {
     public class Employee
     {
-        string name { get; set; }
-        Department department { get; set; }
+        string name;
+        Department department;
 
         public string Name
         {
