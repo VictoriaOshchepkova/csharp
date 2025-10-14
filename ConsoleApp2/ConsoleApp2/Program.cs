@@ -132,7 +132,7 @@ namespace ConsoleApp2
                         Console.WriteLine($"Список всех сотрудников отдела {employeeEx1.Department.Name}, в котором работает {employeeEx1.Name}:");
                         for (int i = 0; i < employeeEx1.Department.EmployeeCount; i++)
                         {
-                            Console.WriteLine($"- {itDepartmentEx.Employees[i].Name}");
+                            Console.WriteLine($"- {employeeEx1.Department.Employees[i].Name}");
                         }
                         break;
                     case 5:
@@ -189,18 +189,20 @@ namespace ConsoleApp2
                         }
                         break;
                     case 6:
+                        Console.WriteLine(" №5.5 Работа с сущностью Дробь");
+
                         Fraction f1 = new Fraction(1, 2);
                         Fraction f2 = new Fraction(2, 3);
                         Fraction f3 = new Fraction(3, 4);
                         Fraction f4 = new Fraction(4, 5);
 
-                        Console.WriteLine("Созданные дроби:");
+                        Console.WriteLine(" Созданные дроби:");
                         Console.WriteLine($"f1 = {f1}");
                         Console.WriteLine($"f2 = {f2}");
                         Console.WriteLine($"f3 = {f3}");
                         Console.WriteLine($"f4 = {f4}"); 
                         
-                        Console.WriteLine("Примеры операций:");
+                        Console.WriteLine(" Примеры операций:");
 
                         Fraction result2 = f1.Sum(f2);
                         Console.WriteLine($"{f1} + {f2} = {result2}");
@@ -226,7 +228,7 @@ namespace ConsoleApp2
                         Fraction result8 = f4.Div(2);
                         Console.WriteLine($"{f4} / 2 = {result8}");
 
-                        Console.WriteLine("Вычисление f1.Sum(f2).Div(f3).Minus(5):");
+                        Console.WriteLine(" Вычисление f1.Sum(f2).Div(f3).Minus(5):");
                         Fraction result9 = f1.Sum(f2).Div(f3).Minus(5);
                         Console.WriteLine($"({f1}).Sum({f2}).Div({f3}).Minus(5) = {result9}");
                         break;
