@@ -224,6 +224,7 @@ namespace ConsoleApp1
             int attempts = 0;
 
             Console.WriteLine(" Введите число от 0 до 9:");
+            
             while (answer != randomNumber)
             {
                 while (true)
