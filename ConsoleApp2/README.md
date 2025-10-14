@@ -127,7 +127,7 @@
 
 # Тестирование
 ## Тесты для Задания 1.3
-<img width="485" height="194" alt="image" src="https://github.com/user-attachments/assets/545f0834-8b54-4be9-b6b4-fa9b602a6386" />  
+<img width="485" height="194" alt="image" src="https://github.com/user-attachments/assets/545f0834-8b54-4be9-b6b4-fa9b602a6386" />\
 <img width="493" height="116" alt="image" src="https://github.com/user-attachments/assets/98975f5b-623a-4ffc-83f0-58d832c0567c" />  
 
 ## Тесты для Задания 1.5
