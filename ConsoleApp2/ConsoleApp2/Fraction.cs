@@ -38,6 +38,7 @@ namespace ConsoleApp2
             Numerator = numerator / gcd;
             Denominator = denominator / gcd;
         }
+
         private static int GCD(int a, int b)
         {
             while (b != 0)
@@ -48,6 +49,7 @@ namespace ConsoleApp2
             }
             return a;
         }
+
         public Fraction Sum(Fraction other)
         {
             int newNumerator = Numerator * other.Denominator + other.Numerator * Denominator;
