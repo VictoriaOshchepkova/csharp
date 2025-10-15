@@ -29,7 +29,7 @@ namespace ConsoleApp2
 
         public override string ToString()
         {
-            string result = "";
+            string result;
 
             if (floors % 10 == 1 && floors % 100 != 11)
             {

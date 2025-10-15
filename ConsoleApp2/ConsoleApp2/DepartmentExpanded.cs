@@ -49,7 +49,7 @@ namespace ConsoleApp2
 
         public override string ToString()
         {
-            return Name;
+            return $"{Name}";
         }
     }
 }

@@ -60,7 +60,7 @@ namespace ConsoleApp2
             {
                 throw new ArgumentException("Error: Invalid input");
             }
-            this.FirstName = firstName;
+            FirstName = firstName;
         }
         public NameСonstrained(string firstName, string lastName)
         {
@@ -68,8 +68,8 @@ namespace ConsoleApp2
             {
                 throw new ArgumentException("Error: Invalid input");
             }
-            this.FirstName = firstName;
-            this.LastName = lastName;
+            FirstName = firstName;
+            LastName = lastName;
         }
         public NameСonstrained(string firstName, string lastName, string patronymic)
         {
@@ -77,9 +77,9 @@ namespace ConsoleApp2
             {
                 throw new ArgumentException("Error: Invalid input");
             }
-            this.FirstName = firstName;
-            this.LastName = lastName;
-            this.Patronymic = patronymic;
+            FirstName = firstName;
+            LastName = lastName;
+            Patronymic = patronymic;
         }
 
         public override string ToString()
