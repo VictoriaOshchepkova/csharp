@@ -118,105 +118,53 @@
 В классе Files реализован метод для создания нового файла с записанными длинами строк из исходного файла: проходится по всем строкам в исходном файле, выводит их в консоль для удобства пользователя и записывает их длины в новый файл с новой строки. В случае, если файл не может быть создан, выводится ошибка 
 
 # Тестирование
-## Тесты для Задания 1.3
-<img width="485" height="194" alt="image" src="https://github.com/user-attachments/assets/545f0834-8b54-4be9-b6b4-fa9b602a6386" />\
-<img width="493" height="116" alt="image" src="https://github.com/user-attachments/assets/98975f5b-623a-4ffc-83f0-58d832c0567c" />  
+## Тесты для Задания 1.8
+<img width="754" height="631" alt="image" src="https://github.com/user-attachments/assets/dc0294f9-6fdc-4625-9e31-aa19c7ff6aa0" />\
+<img width="752" height="389" alt="image" src="https://github.com/user-attachments/assets/b1f63fa3-31c5-431c-af20-94cbbeebed36" />
 
-## Тесты для Задания 1.5
-<img width="319" height="132" alt="image" src="https://github.com/user-attachments/assets/29ed9e69-c589-4f1d-a22f-2d926bca4b47" />  \
-<img width="316" height="52" alt="image" src="https://github.com/user-attachments/assets/185728f2-4250-4325-ba5b-e83ca100748c" />  \
-<img width="319" height="146" alt="image" src="https://github.com/user-attachments/assets/201644fd-0dee-47e6-98ae-c72bea2709da" />  
+## Тесты для Задания 2.8
+<img width="518" height="167" alt="image" src="https://github.com/user-attachments/assets/41266229-6eb6-4051-815f-5559afad6db1" />
+ 
   
-## Тесты для Задания 2.4
+## Тесты для Задания 3.8
+<img width="417" height="330" alt="image" src="https://github.com/user-attachments/assets/8baf8f1a-c51f-4403-932b-fbac5fa08537" />\
+Проверка в [онлайн калькуляторе](https://matrixcalc.org/ru/#%7B%7B1,2,1%7D,%7B1,2,2%7D,%7B3,1,1%7D%7D-%7B%7B2,5,0%7D,%7B1,4,5%7D,%7B8,1,2%7D%7D):\
+<img width="601" height="322" alt="image" src="https://github.com/user-attachments/assets/fac871f4-e0ad-4e78-bc49-f143c09db015" />
+
+## Тесты для Задания 4.8
+<img width="423" height="131" alt="image" src="https://github.com/user-attachments/assets/0f075fea-8e11-4141-b644-99a37c9ac6f2" />
+
+## Тесты для Задания 5.8
 Код:
 ```
-Department itDepartment = new Department("IT");
-Employee employee1 = new Employee("Петров", itDepartment);
-Employee employee2 = new Employee("Козлов", itDepartment);
-Employee employee3 = new Employee("Сидоров", itDepartment);
-itDepartment.Manager = employee2;
-
-Console.WriteLine(employee1);
-Console.WriteLine(employee2);
-Console.WriteLine(employee3);
-```
-Вывод:\
-<img width="449" height="66" alt="image" src="https://github.com/user-attachments/assets/aac8810e-5033-4fe7-b016-01f90cf9cc5c" />
-
-## Тесты для Задания 3.4
-Код:
-```
-DepartmentExpanded itDepartmentEx = new DepartmentExpanded("IT");
-EmployeeExpanded employeeEx1 = new EmployeeExpanded("Петров", itDepartmentEx);
-EmployeeExpanded employeeEx2 = new EmployeeExpanded("Козлов", itDepartmentEx);
-EmployeeExpanded employeeEx3 = new EmployeeExpanded("Сидоров", itDepartmentEx);
-itDepartmentEx.Manager = employeeEx2;
-
-Console.WriteLine(employeeEx1);
-Console.WriteLine(employeeEx2);
-Console.WriteLine(employeeEx3);
-
-Console.WriteLine($"Список всех сотрудников отдела {employeeEx1.Department.Name}, в котором работает {employeeEx1.Name}:");
-for (int i = 0; i < employeeEx1.Department.EmployeeCount; i++)
+Toy[] toys = new Toy[8]
 {
-Console.WriteLine($"- {employeeEx1.Department.Employees[i].Name}");
-}
+    new Toy("Конструктор Lego", 2500, 3, 12),
+    new Toy("Кукла Barbie", 1500, 3, 8),
+    new Toy("Набор химика", 3200, 10, 16),
+    new Toy("Пазл 100 деталей", 800, 4, 10),
+    new Toy("Машинка на радиоуправлении", 4500, 5, 15),
+    new Toy("Мягкий мишка", 600, 1, 6),
+    new Toy("Набор доктора", 1200, 4, 12),
+    new Toy("Энциклопедия", 2000, 8, 16)
+};
 ```
 Вывод:\
-<img width="491" height="130" alt="image" src="https://github.com/user-attachments/assets/ef90afe3-9e93-4b85-8df2-0371a979bb07" />
+<img width="372" height="99" alt="image" src="https://github.com/user-attachments/assets/bec443bd-dfdf-4e88-b09e-89ca41bca579" />
 
-## Тесты для Задания 4.5
-<img width="496" height="211" alt="image" src="https://github.com/user-attachments/assets/ac523a15-0fce-4437-a002-37841d0dc3c5" />\
-<img width="189" height="118" alt="image" src="https://github.com/user-attachments/assets/1bbfe028-574e-4cf0-8890-47918d680674" />\
-<img width="258" height="114" alt="image" src="https://github.com/user-attachments/assets/207d5207-6b5c-4ea2-afd4-8951e460e62c" />\
-<img width="163" height="115" alt="image" src="https://github.com/user-attachments/assets/b977535e-e842-479e-829c-3384312f9e5c" />\
-<img width="167" height="114" alt="image" src="https://github.com/user-attachments/assets/bb9ab941-4e9f-4c3d-a4d1-9d56c0d245b9" />\
-<img width="164" height="113" alt="image" src="https://github.com/user-attachments/assets/ea307780-5f01-437b-ba9c-02c67ea49b0e" />\
-<img width="166" height="114" alt="image" src="https://github.com/user-attachments/assets/5cb0ff76-724d-4c2b-84b7-8119168dd413" />
+## Тесты для Задания 6.8
+<img width="472" height="115" alt="image" src="https://github.com/user-attachments/assets/4426460e-0ea3-4c53-b8bc-460f89e87b78" />
 
-## Тесты для Задания 5.5
-Код:
+## Тесты для Задания 7.8
+<img width="511" height="82" alt="image" src="https://github.com/user-attachments/assets/24fe0205-0d22-4f92-93c0-fbdf0fd9760b" />
+
+## Тесты для Задания 8.8
+Текст в исходном файле:
 ```
-Fraction f1 = new Fraction(1, 2);
-Fraction f2 = new Fraction(2, 3);
-Fraction f3 = new Fraction(3, 4);
-Fraction f4 = new Fraction(4, 5);
-
-Console.WriteLine(" Созданные дроби:");
-Console.WriteLine($"f1 = {f1}");
-Console.WriteLine($"f2 = {f2}");
-Console.WriteLine($"f3 = {f3}");
-Console.WriteLine($"f4 = {f4}"); 
-
-Console.WriteLine(" Примеры операций:");
-
-Fraction result2 = f1.Sum(f2);
-Console.WriteLine($"{f1} + {f2} = {result2}");
-
-Fraction result3 = f3.Minus(f4);
-Console.WriteLine($"{f3} - {f4} = {result3}");
-
-Fraction result1 = f1.Multiply(f2);
-Console.WriteLine($"{f1} * {f2} = {result1}");
-
-Fraction result4 = f3.Div(f4);
-Console.WriteLine($"{f3} / {f4} = {result4}");
-
-Fraction result5 = f1.Sum(2);
-Console.WriteLine($"{f1} + 2 = {result5}");
-
-Fraction result7 = f3.Minus(1);
-Console.WriteLine($"{f3} - 1 = {result7}");
-
-Fraction result6 = f2.Multiply(3);
-Console.WriteLine($"{f2} * 3 = {result6}");
-
-Fraction result8 = f4.Div(2);
-Console.WriteLine($"{f4} / 2 = {result8}");
-
-Console.WriteLine(" Вычисление f1.Sum(f2).Div(f3).Minus(5):");
-Fraction result9 = f1.Sum(f2).Div(f3).Minus(5);
-Console.WriteLine($"({f1}).Sum({f2}).Div({f3}).Minus(5) = {result9}");
-``` 
+Это тестовый файл
+для лаборатоной
+по сишарпу
+для задания 8
+```
 Вывод:\
-<img width="323" height="275" alt="image" src="https://github.com/user-attachments/assets/b80982d5-b5bd-40ef-8014-a9307fe0e96b" />
+<img width="343" height="116" alt="image" src="https://github.com/user-attachments/assets/bcdb14a0-8658-4815-9e8e-141218800652" />
