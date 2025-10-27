@@ -127,8 +127,7 @@ namespace ConsoleApp3
                 int count = 0;
                 for (int i = 0; i < toys.Length; i++)
                 {
-                    if (toys[i].MinAge <= 4 && toys[i].MaxAge >= 4 &&
-                        toys[i].MinAge <= 10 && toys[i].MaxAge >= 10)
+                    if (toys[i].MinAge <= 4 && toys[i].MaxAge >= 10)
                     {
                         count++;
                     }
@@ -153,7 +152,7 @@ namespace ConsoleApp3
                 }
                 else
                 {
-                    for (int i = 0; i < suitableToys.Length; i++)
+                    for (int i = 0; i < count; i++)
                     {
                         Console.WriteLine($"- {suitableToys[i]}");
                     }
@@ -306,12 +305,12 @@ namespace ConsoleApp3
                     Console.WriteLine("Данные в исходном файле:");
                     while ((s = reader.ReadLine()) != null)
                     {
-                        Console.WriteLine($"{s}\t| Длина строки: {s.Length}");
+                        Console.WriteLine($"\t{s}\t| Длина строки: {s.Length}");
                         writer.WriteLine(s.Length);
                     }
                 }
 
-                Console.WriteLine($"Файл 'task8fin.txt' успешно создан!");
+                Console.WriteLine($"Файл 'task8fin.txt' успешно создан");
             }
             catch (FileNotFoundException)
             {
