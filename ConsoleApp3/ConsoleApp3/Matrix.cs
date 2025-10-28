@@ -23,15 +23,13 @@ namespace ConsoleApp3
             {
                 for (int i = 0; i < n; ++i)
                 {
-                    int elem;
                     while (true)
                     {
                         Console.Write($"Элемент [{i},{j}]: ");
 
                         try
                         {
-                            elem = int.Parse(Console.ReadLine());
-                            _data[i, j] = elem;
+                            _data[i, j] = int.Parse(Console.ReadLine());
                             break;
                         }
                         catch (Exception ex)

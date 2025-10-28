@@ -273,7 +273,6 @@ namespace ConsoleApp3
                             }
                         }
 
-                        Files.WriteRandomNumbersNewString(n);
                         Files.FindMinMax();
 
                         break;

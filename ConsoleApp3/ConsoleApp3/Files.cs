@@ -219,11 +219,18 @@ namespace ConsoleApp3
                     }
                 }
 
-                int product = minNum * maxNum;
+                if (isFirst == false)
+                {
+                    int product = minNum * maxNum;
+                    Console.WriteLine($"\nМинимальный элемент: {minNum}");
+                    Console.WriteLine($"Максимальный элемент: {maxNum}");
+                    Console.WriteLine($"Произведение минимального и максимального элементов: {product}");
+                }
+                else
+                {
+                    Console.WriteLine(" Файл пуст");
+                }
 
-                Console.WriteLine($"\nМинимальный элемент: {minNum}");
-                Console.WriteLine($"Максимальный элемент: {maxNum}");
-                Console.WriteLine($"Произведение минимального и максимального элементов: {product}");
             }
             catch
             {
