@@ -43,7 +43,7 @@ namespace ConsoleApp4_1
                 Console.WriteLine(ex.Message);
             }
 
-            Console.WriteLine("\n2. Тестирование метода Subtract:");
+            Console.WriteLine("\n\n2. Тестирование метода Subtract:");
 
             Money result1 = money1.Subtract(money2);
             Console.WriteLine($"{money1} - {money2} = {result1}");

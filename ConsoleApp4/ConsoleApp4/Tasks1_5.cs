@@ -108,7 +108,6 @@ class Tasks1_5
         }
 
         HashSet<HashSet<char>> otherWordsChar = new HashSet<HashSet<char>>();
-        
         for (int i = 1; i < words.Length; i++)
         {
             HashSet<char> wordChars = new HashSet<char>();
@@ -146,108 +145,108 @@ class Tasks1_5
     }
     public static void FillDataFile(string filePath, int participantCount)
     {
-        //Random random = new Random();
-        //string[] surnames = { "Иванов", "Петров", "Сидоров", "Кузнецов", "Смирнов", "Попов", "Васильев" };
-        //string[] names = { "Алексей", "Дмитрий", "Сергей", "Андрей", "Михаил", "Владимир", "Олег" };
+        Random random = new Random();
+        string[] surnames = { "Иванов", "Петров", "Сидоров", "Кузнецов", "Смирнов", "Попов", "Васильев" };
+        string[] names = { "Алексей", "Дмитрий", "Сергей", "Андрей", "Михаил", "Владимир", "Олег" };
 
-        //try
-        //{
-        //    using (StreamWriter writer = new StreamWriter(filePath))
-        //    {
-        //        writer.WriteLine(participantCount);
+        try
+        {
+            using (StreamWriter writer = new StreamWriter(filePath))
+            {
+                writer.WriteLine(participantCount);
 
-        //        Console.WriteLine("Данные в файле:");
-        //        for (int i = 0; i < participantCount; i++)
+                Console.WriteLine("Данные в файле '{filePath}':");
+                for (int i = 0; i < participantCount; i++)
+                {
+                    string surname = surnames[random.Next(surnames.Length)];
+                    string name = names[random.Next(names.Length)];
+                    int grade = random.Next(7, 12);
+                    int score = random.Next(0, 71);
+
+                    writer.WriteLine($"{surname} {name} {grade} {score}");
+                    Console.WriteLine($"{surname} {name} {grade} {score}");
+                }
+            }
+            Console.WriteLine($"Файл '{filePath}' успешно создан и заполнен");
+        }
+        catch
+        {
+            Console.WriteLine($"Error: The file '{filePath}' cannot be created");
+        }
+
+        //        string[] test1 = new string[]
         //        {
-        //            string surname = surnames[random.Next(surnames.Length)];
-        //            string name = names[random.Next(names.Length)];
-        //            int grade = random.Next(7, 12);
-        //            int score = random.Next(0, 71);
+        //            "12",
+        //            "Иванов Петр 7 68", //
+        //            "Петров Иван 7 65",
+        //            "Сидоров Алексей 7 62",
+        //            "Козлова Мария 8 70", //
+        //            "Никитин Сергей 8 67",
+        //            "Федоров Дмитрий 8 64",
+        //            "Семенова Анна 9 69", //
+        //            "Васильев Павел 9 66",
+        //            "Павлова Елена 9 63",
+        //            "Алексеева Ольга 10 58",
+        //            "Дмитриев Максим 11 55",
+        //            "Павлова Марина 9 34",
+        //        };
 
-        //            writer.WriteLine($"{surname} {name} {grade} {score}");
-        //            Console.WriteLine($"{surname} {name} {grade} {score}");
-        //        }
-        //    }
-        //    Console.WriteLine($"Файл '{filePath}' успешно создан и заполнен");
-        //}
-        //catch
+        //        string[] test2 = new string[]
+        //        {
+        //            "12",
+        //            "Иванов Петр 7 68", //
+        //            "Петров Иван 7 65",
+        //            "Сидоров Алексей 7 62",
+        //            "Козлова Мария 8 70", //
+        //            "Никитин Сергей 8 67",
+        //            "Федоров Дмитрий 8 64",
+        //            "Семенова Анна 9 69", //
+        //            "Васильев Павел 9 66",
+        //            "Павлова Елена 9 68", //
+        //            "Алексеева Ольга 10 68", //
+        //            "Дмитриев Максим 11 55",
+        //            "Павлова Марина 9 34",
+        //        };
+
+        //        string[] test3 = new string[]
+        //        {
+        //            "12",
+        //            "Иванов Петр 7 34", 
+        //            "Петров Иван 7 31",
+        //            "Сидоров Алексей 7 15",
+        //            "Козлова Мария 8 70", //
+        //            "Никитин Сергей 8 6",
+        //            "Федоров Дмитрий 8 12",
+        //            "Семенова Анна 9 69", //
+        //            "Васильев Павел 9 16",
+        //            "Павлова Елена 9 34", 
+        //            "Алексеева Ольга 10 34", 
+        //            "Дмитриев Максим 11 5",
+        //            "Павлова Марина 9 34",
+        //        };
+
+        //        string[] test4 = new string[]
         //{
-        //    Console.WriteLine($"Error: The file '{filePath}' cannot be created");
-        //}
-
-        string[] test1 = new string[]
-        {
-            "12",
-            "Иванов Петр 7 68", //
-            "Петров Иван 7 65",
-            "Сидоров Алексей 7 62",
-            "Козлова Мария 8 70", //
-            "Никитин Сергей 8 67",
-            "Федоров Дмитрий 8 64",
-            "Семенова Анна 9 69", //
-            "Васильев Павел 9 66",
-            "Павлова Елена 9 63",
-            "Алексеева Ольга 10 58",
-            "Дмитриев Максим 11 55",
-            "Павлова Марина 9 34",
-        };
-
-        string[] test2 = new string[]
-        {
-            "12",
-            "Иванов Петр 7 68", //
-            "Петров Иван 7 65",
-            "Сидоров Алексей 7 62",
-            "Козлова Мария 8 70", //
-            "Никитин Сергей 8 67",
-            "Федоров Дмитрий 8 64",
-            "Семенова Анна 9 69", //
-            "Васильев Павел 9 66",
-            "Павлова Елена 9 68", //
-            "Алексеева Ольга 10 68", //
-            "Дмитриев Максим 11 55",
-            "Павлова Марина 9 34",
-        };
-
-        string[] test3 = new string[]
-        {
-            "12",
-            "Иванов Петр 7 34", 
-            "Петров Иван 7 31",
-            "Сидоров Алексей 7 15",
-            "Козлова Мария 8 70", //
-            "Никитин Сергей 8 6",
-            "Федоров Дмитрий 8 12",
-            "Семенова Анна 9 69", //
-            "Васильев Павел 9 16",
-            "Павлова Елена 9 34", 
-            "Алексеева Ольга 10 34", 
-            "Дмитриев Максим 11 5",
-            "Павлова Марина 9 34",
-        };
-
-        string[] test4 = new string[]
-{
-            "12",
-            "Иванов Петр 7 34",
-            "Петров Иван 7 31",
-            "Сидоров Алексей 7 15",
-            "Козлова Мария 8 7", 
-            "Никитин Сергей 8 6",
-            "Федоров Дмитрий 8 12",
-            "Семенова Анна 9 6", 
-            "Васильев Павел 9 16",
-            "Павлова Елена 9 34",
-            "Алексеева Ольга 10 34",
-            "Дмитриев Максим 11 5",
-            "Павлова Марина 9 34",
-};
+        //            "12",
+        //            "Иванов Петр 7 34",
+        //            "Петров Иван 7 31",
+        //            "Сидоров Алексей 7 15",
+        //            "Козлова Мария 8 7", 
+        //            "Никитин Сергей 8 6",
+        //            "Федоров Дмитрий 8 12",
+        //            "Семенова Анна 9 6", 
+        //            "Васильев Павел 9 16",
+        //            "Павлова Елена 9 34",
+        //            "Алексеева Ольга 10 34",
+        //            "Дмитриев Максим 11 5",
+        //            "Павлова Марина 9 34",
+        //};
 
 
-        File.WriteAllLines(filePath, test1);
-        Console.WriteLine($"Файл '{filePath}' успешно создан и заполнен");
-        Console.WriteLine($"Данные в файле '{filePath}':");
-        Console.WriteLine(string.Join("\n", test1));
+        //        File.WriteAllLines(filePath, test4);
+        //        Console.WriteLine($"Файл '{filePath}' успешно создан и заполнен");
+        //        Console.WriteLine($"Данные в файле '{filePath}':");
+        //        Console.WriteLine(string.Join("\n", test4));
     }
 
     public static void OlympiadTask(string inputFilePath)
@@ -308,6 +307,10 @@ class Tasks1_5
             else if (currCount + 1 <= topCount && score > 35)
             {
                 minPrizeScore = score;
+                break;
+            }
+            else
+            {
                 break;
             }
         }

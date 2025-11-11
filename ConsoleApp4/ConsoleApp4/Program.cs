@@ -70,6 +70,7 @@ namespace ConsoleApp4
                         break;
                     case 2:
                         LinkedList<object> LL1 = new LinkedList<object>();
+                        LinkedList<object> LL2 = new LinkedList<object>();
                         LL1.AddLast("B");
                         LL1.AddLast(23);
                         LL1.AddLast("(");
@@ -78,10 +79,17 @@ namespace ConsoleApp4
                         Console.WriteLine("Двунаправленный писок LL1:");
                         Console.WriteLine(string.Join(", ", LL1));
 
-                        elem = "^";
-                        Tasks1_5.InsertEBeginningAndEnd(LL1, elem);
-                        Console.WriteLine($"\nДвунаправленный список LL1 после вставки {elem} в начало и конец:");
+                        object elem1 = "^";
+                        Tasks1_5.InsertEBeginningAndEnd(LL1, elem1);
+                        Console.WriteLine($"\nДвунаправленный список LL1 после вставки {elem1} в начало и конец:");
                         Console.WriteLine(string.Join(", ", LL1));
+
+                        Console.WriteLine("Двунаправленный писок LL2:");
+                        Console.WriteLine(string.Join(", ", LL2));
+
+                        Tasks1_5.InsertEBeginningAndEnd(LL2, elem1);
+                        Console.WriteLine($"\nДвунаправленный список LL2 после вставки {elem1} в начало и конец:");
+                        Console.WriteLine(string.Join(", ", LL2));
 
                         break;
                     case 3:
