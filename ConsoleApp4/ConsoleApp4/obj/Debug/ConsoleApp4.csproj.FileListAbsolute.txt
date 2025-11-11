@@ -1,0 +1,7 @@
+C:\Users\ARTEL PC\Documents\GitHub\csharp\ConsoleApp4\ConsoleApp4\bin\Debug\ConsoleApp4.exe.config
+C:\Users\ARTEL PC\Documents\GitHub\csharp\ConsoleApp4\ConsoleApp4\bin\Debug\ConsoleApp4.exe
+C:\Users\ARTEL PC\Documents\GitHub\csharp\ConsoleApp4\ConsoleApp4\bin\Debug\ConsoleApp4.pdb
+C:\Users\ARTEL PC\Documents\GitHub\csharp\ConsoleApp4\ConsoleApp4\obj\Debug\ConsoleApp4.csproj.AssemblyReference.cache
+C:\Users\ARTEL PC\Documents\GitHub\csharp\ConsoleApp4\ConsoleApp4\obj\Debug\ConsoleApp4.csproj.CoreCompileInputs.cache
+C:\Users\ARTEL PC\Documents\GitHub\csharp\ConsoleApp4\ConsoleApp4\obj\Debug\ConsoleApp4.exe
+C:\Users\ARTEL PC\Documents\GitHub\csharp\ConsoleApp4\ConsoleApp4\obj\Debug\ConsoleApp4.pdb
