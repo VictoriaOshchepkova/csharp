@@ -1,0 +1,86 @@
+# Лабораторная работа №5
+
+## Структура
+Программа состоит из 3 файлов:
+1. `Program.cs` - содержит главный метод Main, где организован вызов всех методов с дружественным интерфейсом
+2. `PizzaRepository.cs` - содержит класс с методами для работы с базой данных
+3. `Data.cs` - содержит классы, описывающие объекты в базе данных
+
+# Алгоритм работы
+
+===
+
+# Тестирование
+Тестирование проведено на тестовой базе данных:
+
+**Таблица Клиенты**
+| Код клиента | Фамилия | Имя | Отчество | Место жительства |
+|----|----------|-----------|------------|---------|
+| 1 | Иванов | Иван | Иванович | г. Пермь |
+| 2 | Петров | Петр | Петрович | г. Москва |
+| 3 | Сидорова | Мария | Сергеевна | г. Пермь |
+| 4 | Кузнецов | Алексей | Владимирович | г. Екатеринбург |
+| 5 | Смирнова | Ольга | Дмитриевна | г. Пермь |
+
+**Таблица Заказы**
+
+| Код заказа | Дата | Код клиента | Цена доставки | Статус доставки |
+|----|-----------|----------|----------|--------|
+| 1 | 20.11.2025 | 1 | 150 р. | Выполнено |
+| 2 | 22.11.2025 | 3 | 0 р. | Не выполнено |
+| 3 | 23.11.2025 | 5 | 180 р. | Выполнено |
+| 4 | 24.11.2025 | 2 | 0 р. | Не выполнено |
+| 5 | 18.11.2025 | 4 | 170 р. | Выполнено |
+
+**Таблица Состав заказов**
+| Код | Код заказа | Код блюда | Количество |
+|----|---------|--------|----------|
+| 1 | 1 | 1 | 2 |
+| 2 | 1 | 3 | 1 |
+| 3 | 2 | 2 | 1 |
+| 4 | 3 | 5 | 1 |
+| 5 | 4 | 4 | 1 |
+| 6 | 5 | 1 | 1 |
+
+**Таблица Меню**
+| Код блюда | Название | Цена |
+|----|------|-------|
+| 1 | Пепперони | 450 р. |
+| 2 | Маргарита | 380 р. |
+| 3 | Гавайская | 420 р. |
+| 4 | Четыре сыра | 480 р. |
+| 5 | Мясная | 520 р. |
+
+## Просмотр базы данных
+<img width="401" height="213" alt="image" src="https://github.com/user-attachments/assets/ee07582c-bd85-4f74-93bc-52813a928fd3" />
+
+## Удаление элементов
+***Корректные данные:***\
+<img width="238" height="131" alt="image" src="https://github.com/user-attachments/assets/053da1da-4d4a-416e-b11a-ead2b603a003" />\
+Состояние базы данных после удаления записи:
+<img width="533" height="91" alt="image" src="https://github.com/user-attachments/assets/f501fb25-d9a4-4abb-8258-063ba8ee0730" />\
+<img width="215" height="92" alt="image" src="https://github.com/user-attachments/assets/deb4dce3-cbe7-45a3-b9ed-5a3318b53286" />\
+***Некорректные данные:***\
+<img width="294" height="133" alt="image" src="https://github.com/user-attachments/assets/68837dcc-7f5f-4433-bf2d-a4bdade0ab7d" />
+
+## Добавление элементов
+***Корректные данные:***\
+<img width="230" height="181" alt="image" src="https://github.com/user-attachments/assets/df4ecf0f-0826-466f-8039-c67d2f511bba" />\
+Состояние базы данных после удаления записи:\
+<img width="400" height="122" alt="image" src="https://github.com/user-attachments/assets/bf5c8d1f-64fc-4d3b-987e-2acc442af905" />\
+***Некорректные данные:***\
+<img width="264" height="162" alt="image" src="https://github.com/user-attachments/assets/76bbb51e-e09b-4176-9aed-b34b8c77f6f7" />
+
+## Запросы
+<img width="514" height="183" alt="image" src="https://github.com/user-attachments/assets/fff28295-3934-462b-9878-5b486f6e842d" />\
+<img width="433" height="84" alt="image" src="https://github.com/user-attachments/assets/6911f692-a940-45fd-ada2-9074d6f32f83" />\
+<img width="350" height="54" alt="image" src="https://github.com/user-attachments/assets/2ad3c1d6-11cc-4d78-b9db-62c023920e71" />\
+<img width="335" height="53" alt="image" src="https://github.com/user-attachments/assets/f6e188a6-ba84-46fe-b7e7-5693551d60f9" />
+
+## Сохранение изменений
+<img width="452" height="149" alt="image" src="https://github.com/user-attachments/assets/af329992-54d0-43c3-a994-1df320de03fa" />\
+Состояние базы данных после сохранения изменений:\
+<img width="408" height="144" alt="image" src="https://github.com/user-attachments/assets/691e1dc9-93a8-4211-bd08-bf4134ec89a6" />\
+<img width="415" height="107" alt="image" src="https://github.com/user-attachments/assets/cb50cef7-ede3-4172-862c-fbf7e728e53c" />\
+<img width="292" height="113" alt="image" src="https://github.com/user-attachments/assets/740d4553-c143-4c20-85d8-6322ffb58d4c" />\
+<img width="221" height="130" alt="image" src="https://github.com/user-attachments/assets/8c357cd1-1097-4d4e-91d5-ecc53af4e029" />
