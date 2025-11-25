@@ -143,7 +143,7 @@
 ## Удаление элементов
 ***Корректные данные:***\
 <img width="238" height="131" alt="image" src="https://github.com/user-attachments/assets/053da1da-4d4a-416e-b11a-ead2b603a003" />\
-Состояние базы данных после удаления записи:
+Состояние базы данных после удаления записи:\
 <img width="533" height="91" alt="image" src="https://github.com/user-attachments/assets/f501fb25-d9a4-4abb-8258-063ba8ee0730" />\
 <img width="215" height="92" alt="image" src="https://github.com/user-attachments/assets/deb4dce3-cbe7-45a3-b9ed-5a3318b53286" />\
 ***Некорректные данные:***\
