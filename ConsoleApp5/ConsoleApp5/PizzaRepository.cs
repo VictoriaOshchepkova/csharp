@@ -114,11 +114,11 @@ public class PizzaRepository
         Menu.Add(new Menu(4, "Четыре сыра", 480));
         Menu.Add(new Menu(5, "Мясная", 520));
 
-        Orders.Add(new Order(1, DateTime.Now.AddDays(-5), 1, 150, "Выполнено"));
-        Orders.Add(new Order(2, DateTime.Now.AddDays(-3), 3, 0, "Не выполнено"));
-        Orders.Add(new Order(3, DateTime.Now.AddDays(-2), 5, 180, "Выполнено"));
-        Orders.Add(new Order(4, DateTime.Now.AddDays(-1), 2, 0, "Не выполнено"));
-        Orders.Add(new Order(5, DateTime.Now.AddDays(-7), 4, 170, "Выполнено"));
+        Orders.Add(new Order(1, new DateTime(2025, 11, 20), 1, 150, "Выполнено"));
+        Orders.Add(new Order(2, new DateTime(2025, 11, 22), 3, 0, "Не выполнено"));
+        Orders.Add(new Order(3, new DateTime(2025, 11, 23), 5, 180, "Выполнено"));
+        Orders.Add(new Order(4, new DateTime(2025, 11, 24), 2, 0, "Не выполнено"));
+        Orders.Add(new Order(5, new DateTime(2025, 11, 18), 4, 170, "Выполнено"));
 
         OrderItems.Add(new OrderItem(1, 1, 1, 2));
         OrderItems.Add(new OrderItem(2, 1, 3, 1));
@@ -173,6 +173,17 @@ public class PizzaRepository
         var client = (from c in Clients where c.ClientID == clientId select c).FirstOrDefault();
         if (client != null)
         {
+            var ordersToRemove = (from o in Orders where o.ClientID == clientId select o).ToList();
+            foreach (var order in ordersToRemove)
+            {
+                var orderItemsToRemove = (from oi in OrderItems where oi.OrderID == order.OrderID select oi).ToList();
+                foreach (var item in orderItemsToRemove)
+                {
+                    OrderItems.Remove(item);
+                }
+                Orders.Remove(order);
+            }
+
             Clients.Remove(client);
             return true;
         }
@@ -183,7 +194,7 @@ public class PizzaRepository
     {
         if (Clients.Any())
         {
-            client.ClientID = Clients.Max(c => c.ClientID) + 1;
+            client.ClientID = (from c in Clients select c.ClientID).Max() +1;
         }
         else
         {
@@ -210,6 +221,11 @@ public class PizzaRepository
 
     public void AddOrder(Order order)
     {
+        var client = (from c in Clients where c.ClientID == order.ClientID select c).FirstOrDefault();
+        if (client == null)
+        {
+            throw new ArgumentException($"Клиент с кодом {order.ClientID} не существует.");
+        }
         if (Orders.Any())
         {
             order.OrderID = (from o in Orders select o.OrderID).Max() + 1;
@@ -226,6 +242,12 @@ public class PizzaRepository
         var menuItem = (from m in Menu where m.DishID == dishId select m).FirstOrDefault();
         if (menuItem != null)
         {
+            var orderItemsToRemove = (from oi in OrderItems where oi.DishID == dishId select oi).ToList();
+            foreach (var item in orderItemsToRemove)
+            {
+                OrderItems.Remove(item);
+            }
+
             Menu.Remove(menuItem);
             return true;
         }
@@ -258,6 +280,17 @@ public class PizzaRepository
 
     public void AddOrderItem(OrderItem orderItem)
     {
+        var order = (from o in Orders where o.OrderID == orderItem.OrderID select o).FirstOrDefault();
+        if (order == null)
+        {
+            throw new ArgumentException($"Заказ с кодом {orderItem.OrderID} не существует.");
+        }
+
+        var menuItem = (from m in Menu where m.DishID == orderItem.DishID select m).FirstOrDefault();
+        if (menuItem == null)
+        {
+            throw new ArgumentException($"Блюдо с кодом {orderItem.DishID} не существует.");
+        }
         if (OrderItems.Any())
         {
             orderItem.OrderItemID = (from oi in OrderItems select oi.OrderItemID).Max() + 1;
