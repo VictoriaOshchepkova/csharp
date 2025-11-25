@@ -1,0 +1,10 @@
+C:\Users\ARTEL PC\source\repos\ConsoleApp5\ConsoleApp5\bin\Debug\ConsoleApp5.exe.config
+C:\Users\ARTEL PC\source\repos\ConsoleApp5\ConsoleApp5\bin\Debug\ConsoleApp5.exe
+C:\Users\ARTEL PC\source\repos\ConsoleApp5\ConsoleApp5\bin\Debug\ConsoleApp5.pdb
+C:\Users\ARTEL PC\source\repos\ConsoleApp5\ConsoleApp5\bin\Debug\Aspose.Cells.dll
+C:\Users\ARTEL PC\source\repos\ConsoleApp5\ConsoleApp5\bin\Debug\Aspose.Cells.xml
+C:\Users\ARTEL PC\source\repos\ConsoleApp5\ConsoleApp5\obj\Debug\ConsoleApp5.csproj.AssemblyReference.cache
+C:\Users\ARTEL PC\source\repos\ConsoleApp5\ConsoleApp5\obj\Debug\ConsoleApp5.csproj.CoreCompileInputs.cache
+C:\Users\ARTEL PC\source\repos\ConsoleApp5\ConsoleApp5\obj\Debug\ConsoleApp5.csproj.CopyComplete
+C:\Users\ARTEL PC\source\repos\ConsoleApp5\ConsoleApp5\obj\Debug\ConsoleApp5.exe
+C:\Users\ARTEL PC\source\repos\ConsoleApp5\ConsoleApp5\obj\Debug\ConsoleApp5.pdb
