@@ -43,6 +43,8 @@ namespace ConsoleApp6
 
                             var result = Funs.MeowsCare(barsik, batman, batman, sema, gosha, barsik, barsik);
 
+                            Console.WriteLine();
+
                             foreach (var meowable in result)
                             {
                                 Console.WriteLine($"{meowable.Key} мяукал {meowable.Value.MeowCount} раз(а)");
