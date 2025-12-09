@@ -41,7 +41,12 @@ namespace ConsoleApp6
                             Parrot sema = new Parrot("Сёма");
                             Parrot gosha = new Parrot("Гоша");
 
-                            Funs.MeowsCare(barsik, batman, batman, sema, gosha, barsik, barsik);
+                            var result = Funs.MeowsCare(barsik, batman, batman, sema, gosha, barsik, barsik);
+
+                            foreach (var meowable in result)
+                            {
+                                Console.WriteLine($"{meowable.Key} мяукал {meowable.Value.MeowCount} раз(а)");
+                            }
                             break;
                         case "2":
                             Console.Clear();
@@ -70,8 +75,8 @@ namespace ConsoleApp6
                             Console.WriteLine($"{f3} / {f4} = {f3 / f4}");
                             Console.WriteLine($"{f3} / {9} = {f3 / 9}");
 
-                            Console.WriteLine($"\nВычисление f1 + f2 / f3 - 5:");
-                            Console.WriteLine($"{f1} + {f2} / {f3} - 5 = {f1 + f2 / f3 - 5}");
+                            Console.WriteLine($"\nВычисление f1.Sum(f2).Div(f3).Minus(5):");
+                            Console.WriteLine($"({f1}).Sum({f2}).Div({f3}).Minus(5) = {f1.Sum(f2).Div(f3).Minus(5)}");
 
                             Console.WriteLine($"\nСравнение дробей:");
                             Console.WriteLine($"{f2} == {f4}: {f2.Equals(f4)}");

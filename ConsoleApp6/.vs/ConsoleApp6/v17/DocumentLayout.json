@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\ARTEL PC\\Documents\\GitHub\\csharp\\ConsoleApp6\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{80F9F035-91EE-4FCB-8D3F-FA2ECAB3DC63}|ConsoleApp6\\ConsoleApp6.csproj|c:\\users\\artel pc\\documents\\github\\csharp\\consoleapp6\\consoleapp6\\fraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80F9F035-91EE-4FCB-8D3F-FA2ECAB3DC63}|ConsoleApp6\\ConsoleApp6.csproj|solutionrelative:consoleapp6\\fraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80F9F035-91EE-4FCB-8D3F-FA2ECAB3DC63}|ConsoleApp6\\ConsoleApp6.csproj|c:\\users\\artel pc\\documents\\github\\csharp\\consoleapp6\\consoleapp6\\ifraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80F9F035-91EE-4FCB-8D3F-FA2ECAB3DC63}|ConsoleApp6\\ConsoleApp6.csproj|solutionrelative:consoleapp6\\ifraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{80F9F035-91EE-4FCB-8D3F-FA2ECAB3DC63}|ConsoleApp6\\ConsoleApp6.csproj|c:\\users\\artel pc\\documents\\github\\csharp\\consoleapp6\\consoleapp6\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{80F9F035-91EE-4FCB-8D3F-FA2ECAB3DC63}|ConsoleApp6\\ConsoleApp6.csproj|solutionrelative:consoleapp6\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{80F9F035-91EE-4FCB-8D3F-FA2ECAB3DC63}|ConsoleApp6\\ConsoleApp6.csproj|c:\\users\\artel pc\\documents\\github\\csharp\\consoleapp6\\consoleapp6\\meowcounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{80F9F035-91EE-4FCB-8D3F-FA2ECAB3DC63}|ConsoleApp6\\ConsoleApp6.csproj|solutionrelative:consoleapp6\\meowcounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{80F9F035-91EE-4FCB-8D3F-FA2ECAB3DC63}|ConsoleApp6\\ConsoleApp6.csproj|c:\\users\\artel pc\\documents\\github\\csharp\\consoleapp6\\consoleapp6\\funs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{80F9F035-91EE-4FCB-8D3F-FA2ECAB3DC63}|ConsoleApp6\\ConsoleApp6.csproj|solutionrelative:consoleapp6\\funs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80F9F035-91EE-4FCB-8D3F-FA2ECAB3DC63}|ConsoleApp6\\ConsoleApp6.csproj|c:\\users\\artel pc\\documents\\github\\csharp\\consoleapp6\\consoleapp6\\meowcounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80F9F035-91EE-4FCB-8D3F-FA2ECAB3DC63}|ConsoleApp6\\ConsoleApp6.csproj|solutionrelative:consoleapp6\\meowcounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{80F9F035-91EE-4FCB-8D3F-FA2ECAB3DC63}|ConsoleApp6\\ConsoleApp6.csproj|c:\\users\\artel pc\\documents\\github\\csharp\\consoleapp6\\consoleapp6\\cat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,8 +31,8 @@
       "RelativeMoniker": "D:0:0:{80F9F035-91EE-4FCB-8D3F-FA2ECAB3DC63}|ConsoleApp6\\ConsoleApp6.csproj|solutionrelative:consoleapp6\\parrot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{80F9F035-91EE-4FCB-8D3F-FA2ECAB3DC63}|ConsoleApp6\\ConsoleApp6.csproj|c:\\users\\artel pc\\documents\\github\\csharp\\consoleapp6\\consoleapp6\\fraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{80F9F035-91EE-4FCB-8D3F-FA2ECAB3DC63}|ConsoleApp6\\ConsoleApp6.csproj|solutionrelative:consoleapp6\\fraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{80F9F035-91EE-4FCB-8D3F-FA2ECAB3DC63}|ConsoleApp6\\ConsoleApp6.csproj|c:\\users\\artel pc\\documents\\github\\csharp\\consoleapp6\\consoleapp6\\imeowable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80F9F035-91EE-4FCB-8D3F-FA2ECAB3DC63}|ConsoleApp6\\ConsoleApp6.csproj|solutionrelative:consoleapp6\\imeowable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,65 +46,26 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Parrot.cs",
-              "DocumentMoniker": "C:\\Users\\ARTEL PC\\Documents\\GitHub\\csharp\\ConsoleApp6\\ConsoleApp6\\Parrot.cs",
-              "RelativeDocumentMoniker": "ConsoleApp6\\Parrot.cs",
-              "ToolTip": "C:\\Users\\ARTEL PC\\Documents\\GitHub\\csharp\\ConsoleApp6\\ConsoleApp6\\Parrot.cs",
-              "RelativeToolTip": "ConsoleApp6\\Parrot.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAYwD0AAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-09T10:06:04.047Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Cat.cs",
-              "DocumentMoniker": "C:\\Users\\ARTEL PC\\Documents\\GitHub\\csharp\\ConsoleApp6\\ConsoleApp6\\Cat.cs",
-              "RelativeDocumentMoniker": "ConsoleApp6\\Cat.cs",
-              "ToolTip": "C:\\Users\\ARTEL PC\\Documents\\GitHub\\csharp\\ConsoleApp6\\ConsoleApp6\\Cat.cs",
-              "RelativeToolTip": "ConsoleApp6\\Cat.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAowA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T17:58:39.451Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MeowCounter.cs",
-              "DocumentMoniker": "C:\\Users\\ARTEL PC\\Documents\\GitHub\\csharp\\ConsoleApp6\\ConsoleApp6\\MeowCounter.cs",
-              "RelativeDocumentMoniker": "ConsoleApp6\\MeowCounter.cs",
-              "ToolTip": "C:\\Users\\ARTEL PC\\Documents\\GitHub\\csharp\\ConsoleApp6\\ConsoleApp6\\MeowCounter.cs",
-              "RelativeToolTip": "ConsoleApp6\\MeowCounter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-09T09:30:11.454Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "Funs.cs",
               "DocumentMoniker": "C:\\Users\\ARTEL PC\\Documents\\GitHub\\csharp\\ConsoleApp6\\ConsoleApp6\\Funs.cs",
               "RelativeDocumentMoniker": "ConsoleApp6\\Funs.cs",
               "ToolTip": "C:\\Users\\ARTEL PC\\Documents\\GitHub\\csharp\\ConsoleApp6\\ConsoleApp6\\Funs.cs",
               "RelativeToolTip": "ConsoleApp6\\Funs.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABkAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-09T08:27:44.336Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\ARTEL PC\\Documents\\GitHub\\csharp\\ConsoleApp6\\ConsoleApp6\\Program.cs",
               "RelativeDocumentMoniker": "ConsoleApp6\\Program.cs",
               "ToolTip": "C:\\Users\\ARTEL PC\\Documents\\GitHub\\csharp\\ConsoleApp6\\ConsoleApp6\\Program.cs",
               "RelativeToolTip": "ConsoleApp6\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAA+AAAAAAAAAA==",
+              "ViewState": "AgIAABkAAAAAAAAAAAAYwCsAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-07T13:59:03.647Z",
               "EditorCaption": ""
@@ -104,14 +73,79 @@
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "Cat.cs",
+              "DocumentMoniker": "C:\\Users\\ARTEL PC\\Documents\\GitHub\\csharp\\ConsoleApp6\\ConsoleApp6\\Cat.cs",
+              "RelativeDocumentMoniker": "ConsoleApp6\\Cat.cs",
+              "ToolTip": "C:\\Users\\ARTEL PC\\Documents\\GitHub\\csharp\\ConsoleApp6\\ConsoleApp6\\Cat.cs",
+              "RelativeToolTip": "ConsoleApp6\\Cat.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFIAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T17:58:39.451Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MeowCounter.cs",
+              "DocumentMoniker": "C:\\Users\\ARTEL PC\\Documents\\GitHub\\csharp\\ConsoleApp6\\ConsoleApp6\\MeowCounter.cs",
+              "RelativeDocumentMoniker": "ConsoleApp6\\MeowCounter.cs",
+              "ToolTip": "C:\\Users\\ARTEL PC\\Documents\\GitHub\\csharp\\ConsoleApp6\\ConsoleApp6\\MeowCounter.cs",
+              "RelativeToolTip": "ConsoleApp6\\MeowCounter.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAYwDYAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T09:30:11.454Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Fraction.cs",
               "DocumentMoniker": "C:\\Users\\ARTEL PC\\Documents\\GitHub\\csharp\\ConsoleApp6\\ConsoleApp6\\Fraction.cs",
               "RelativeDocumentMoniker": "ConsoleApp6\\Fraction.cs",
               "ToolTip": "C:\\Users\\ARTEL PC\\Documents\\GitHub\\csharp\\ConsoleApp6\\ConsoleApp6\\Fraction.cs",
               "RelativeToolTip": "ConsoleApp6\\Fraction.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAYwC0AAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAHgBAAAAAAAAAAAAAHEBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-07T10:24:53.349Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IFraction.cs",
+              "DocumentMoniker": "C:\\Users\\ARTEL PC\\Documents\\GitHub\\csharp\\ConsoleApp6\\ConsoleApp6\\IFraction.cs",
+              "RelativeDocumentMoniker": "ConsoleApp6\\IFraction.cs",
+              "ToolTip": "C:\\Users\\ARTEL PC\\Documents\\GitHub\\csharp\\ConsoleApp6\\ConsoleApp6\\IFraction.cs",
+              "RelativeToolTip": "ConsoleApp6\\IFraction.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T16:04:04.565Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Parrot.cs",
+              "DocumentMoniker": "C:\\Users\\ARTEL PC\\Documents\\GitHub\\csharp\\ConsoleApp6\\ConsoleApp6\\Parrot.cs",
+              "RelativeDocumentMoniker": "ConsoleApp6\\Parrot.cs",
+              "ToolTip": "C:\\Users\\ARTEL PC\\Documents\\GitHub\\csharp\\ConsoleApp6\\ConsoleApp6\\Parrot.cs",
+              "RelativeToolTip": "ConsoleApp6\\Parrot.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAqwD0AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T10:06:04.047Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IMeowable.cs",
+              "DocumentMoniker": "C:\\Users\\ARTEL PC\\Documents\\GitHub\\csharp\\ConsoleApp6\\ConsoleApp6\\IMeowable.cs",
+              "RelativeDocumentMoniker": "ConsoleApp6\\IMeowable.cs",
+              "ToolTip": "C:\\Users\\ARTEL PC\\Documents\\GitHub\\csharp\\ConsoleApp6\\ConsoleApp6\\IMeowable.cs",
+              "RelativeToolTip": "ConsoleApp6\\IMeowable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T15:22:35.014Z",
               "EditorCaption": ""
             }
           ]

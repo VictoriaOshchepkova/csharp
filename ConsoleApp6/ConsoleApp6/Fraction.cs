@@ -3,26 +3,6 @@
 namespace ConsoleApp6
 {
     /// <summary>
-    /// Интерфейс для работы с дробями.
-    /// </summary>
-    public interface IFraction
-    {
-        /// <summary>
-        /// Получает вещественное значение дроби.
-        /// </summary>
-        /// <returns>Значение дроби в виде числа с плавающей запятой.</returns>
-        /// /// <returns>Десятичное значение дроби типа <see cref="double"/>.</returns>
-        double GetRealValue();
-
-        /// <summary>
-        /// Устанавливает значения числителя и знаменателя.
-        /// </summary>
-        /// <param name="numerator">Числитель.</param>
-        /// <param name="denominator">Знаменатель.</param>
-        void SetValues(int numerator, int denominator);
-    }
-
-    /// <summary>
     /// Представляет дробь с поддержкой арифметических операций, нормализации и клонирования.
     /// </summary>
     public class Fraction : ICloneable, IFraction
@@ -140,6 +120,28 @@ namespace ConsoleApp6
         }
 
         /// <summary>
+        /// Складывает текущую дробь с другой.
+        /// </summary>
+        /// <param name="other">Дробь для сложения.</param>
+        /// <returns>Новая дробь, представляющая сумму текущей дроби и <paramref name="other"/>.</returns>
+        public Fraction Sum(Fraction other)
+        {
+            int newNumerator = Numerator * other.Denominator + other.Numerator * Denominator;
+            int newDenominator = Denominator * other.Denominator;
+            return new Fraction(newNumerator, newDenominator);
+        }
+
+        /// <summary>
+        /// Складывает текущую дробь с целым числом.
+        /// </summary>
+        /// <param name="number">Целое число.</param>
+        /// <returns>Новая дробь, представляющая сумму текущей дроби и <paramref name="number"/>.</returns>
+        public Fraction Sum(int number)
+        {
+            return Sum(new Fraction(number, 1));
+        }
+
+        /// <summary>
         /// Складывает две дроби.
         /// </summary>
         /// <param name="a">Первая дробь.</param>
@@ -147,9 +149,7 @@ namespace ConsoleApp6
         /// <returns>Новая дробь, представляющая сумму <paramref name="a"/> и <paramref name="b"/>.</returns>
         public static Fraction operator +(Fraction a, Fraction b)
         {
-            int newNumerator = a.Numerator * b.Denominator + b.Numerator * a.Denominator;
-            int newDenominator = a.Denominator * b.Denominator;
-            return new Fraction(newNumerator, newDenominator);
+            return a.Sum(b);
         }
 
         /// <summary>
@@ -160,8 +160,7 @@ namespace ConsoleApp6
         /// <returns>Новая дробь, представляющая сумму <paramref name="a"/> и <paramref name="b"/>.</returns>
         public static Fraction operator +(Fraction a, int b)
         {
-            Fraction fractionB = new Fraction(b, 1);
-            return a + fractionB;
+            return a.Sum(b);
         }
 
         /// <summary>
@@ -172,7 +171,29 @@ namespace ConsoleApp6
         /// <returns>Новая дробь, представляющая сумму <paramref name="b"/> и <paramref name="a"/>.</returns>
         public static Fraction operator +(int b, Fraction a)
         {
-            return a + b;
+            return a.Sum(b);
+        }
+
+        /// <summary>
+        /// Вычитает другую дробь из текущей.
+        /// </summary>
+        /// <param name="other">Дробь для вычитания.</param>
+        /// <returns>Новая дробь, представляющая разность текущей дроби и <paramref name="other"/>.</returns>
+        public Fraction Minus(Fraction other)
+        {
+            int newNumerator = Numerator * other.Denominator - other.Numerator * Denominator;
+            int newDenominator = Denominator * other.Denominator;
+            return new Fraction(newNumerator, newDenominator);
+        }
+
+        /// <summary>
+        /// Вычитает целое число из текущей дроби.
+        /// </summary>
+        /// <param name="number">Целое число.</param>
+        /// <returns>Новая дробь, представляющая разность текущей дроби и <paramref name="number"/>.</returns>
+        public Fraction Minus(int number)
+        {
+            return Minus(new Fraction(number, 1));
         }
 
         /// <summary>
@@ -183,9 +204,7 @@ namespace ConsoleApp6
         /// <returns>Новая дробь, представляющая разность <paramref name="a"/> и <paramref name="b"/>.</returns>
         public static Fraction operator -(Fraction a, Fraction b)
         {
-            int newNumerator = a.Numerator * b.Denominator - b.Numerator * a.Denominator;
-            int newDenominator = a.Denominator * b.Denominator;
-            return new Fraction(newNumerator, newDenominator);
+            return a.Minus(b);
         }
 
         /// <summary>
@@ -196,8 +215,7 @@ namespace ConsoleApp6
         /// <returns>Новая дробь, представляющая разность <paramref name="a"/> и <paramref name="b"/>.</returns>
         public static Fraction operator -(Fraction a, int b)
         {
-            Fraction fractionB = new Fraction(b, 1);
-            return a - fractionB;
+            return a.Minus(b);
         }
 
         /// <summary>
@@ -208,8 +226,29 @@ namespace ConsoleApp6
         /// <returns>Новая дробь, представляющая разность <paramref name="b"/> и <paramref name="a"/>.</returns>
         public static Fraction operator -(int b, Fraction a)
         {
-            Fraction fractionB = new Fraction(b, 1);
-            return fractionB - a;
+            return new Fraction(b, 1).Minus(a);
+        }
+
+        /// <summary>
+        /// Умножает текущую дробь на другую.
+        /// </summary>
+        /// <param name="other">Дробь для умножения.</param>
+        /// <returns>Новая дробь, представляющая произведение текущей дроби на <paramref name="other"/>.</returns>
+        public Fraction Multiply(Fraction other)
+        {
+            int newNumerator = Numerator * other.Numerator;
+            int newDenominator = Denominator * other.Denominator;
+            return new Fraction(newNumerator, newDenominator);
+        }
+
+        /// <summary>
+        /// Умножает текущую дробь на целое число.
+        /// </summary>
+        /// <param name="number">Целое число.</param>
+        /// <returns>Новая дробь, представляющая произведение текущей дроби на <paramref name="number"/>.</returns>
+        public Fraction Multiply(int number)
+        {
+            return Multiply(new Fraction(number, 1));
         }
 
         /// <summary>
@@ -220,9 +259,7 @@ namespace ConsoleApp6
         /// <returns>Новая дробь, представляющая произведение <paramref name="a"/> и <paramref name="b"/>.</returns>
         public static Fraction operator *(Fraction a, Fraction b)
         {
-            int newNumerator = a.Numerator * b.Numerator;
-            int newDenominator = a.Denominator * b.Denominator;
-            return new Fraction(newNumerator, newDenominator);
+            return a.Multiply(b);
         }
 
         /// <summary>
@@ -233,8 +270,7 @@ namespace ConsoleApp6
         /// <returns>Новая дробь, представляющая произведение <paramref name="a"/> и <paramref name="b"/>.</returns>
         public static Fraction operator *(Fraction a, int b)
         {
-            Fraction fractionB = new Fraction(b, 1);
-            return a * fractionB;
+            return a.Multiply(b);
         }
 
         /// <summary>
@@ -245,7 +281,35 @@ namespace ConsoleApp6
         /// <returns>Новая дробь, представляющая произведение <paramref name="b"/> и <paramref name="a"/>.</returns>
         public static Fraction operator *(int b, Fraction a)
         {
-            return a * b;
+            return a.Multiply(b);
+        }
+
+        /// <summary>
+        /// Делит текущую дробь на другую.
+        /// </summary>
+        /// <param name="other">Дробь, на которую нужно разделить.</param>
+        /// <returns>Новая дробь, представляющая частное текущей дроби и <paramref name="other"/>.</returns>
+        /// <exception cref="DivideByZeroException">Выбрасывается, если числитель дроби, на которую делят, равен 0.</exception>
+        public Fraction Div(Fraction other)
+        {
+            if (other.Numerator == 0)
+            {
+                throw new DivideByZeroException("Error: division by zero");
+            }
+
+            int newNumerator = Numerator * other.Denominator;
+            int newDenominator = Denominator * other.Numerator;
+            return new Fraction(newNumerator, newDenominator);
+        }
+
+        /// <summary>
+        /// Делит текущую дробь на целое число.
+        /// </summary>
+        /// <param name="number">Целое число.</param>
+        /// <returns>Новая дробь, представляющая частное текущей дроби и <paramref name="number"/>.</returns>
+        public Fraction Div(int number)
+        {
+            return Div(new Fraction(number, 1));
         }
 
         /// <summary>
@@ -257,14 +321,7 @@ namespace ConsoleApp6
         /// <exception cref="DivideByZeroException">Выбрасывается, если числитель дроби, на которую делят, равен 0.</exception>
         public static Fraction operator /(Fraction a, Fraction b)
         {
-            if (b.Numerator == 0)
-            {
-                throw new DivideByZeroException("Error: division by zero");
-            }
-
-            int newNumerator = a.Numerator * b.Denominator;
-            int newDenominator = a.Denominator * b.Numerator;
-            return new Fraction(newNumerator, newDenominator);
+            return a.Div(b);
         }
 
         /// <summary>
@@ -276,13 +333,7 @@ namespace ConsoleApp6
         /// <exception cref="DivideByZeroException">Выбрасывается, если <paramref name="b"/> равно 0.</exception>
         public static Fraction operator /(Fraction a, int b)
         {
-            if (b == 0)
-            {
-                throw new DivideByZeroException("Error: division by zero");
-            }
-
-            Fraction fractionB = new Fraction(b, 1);
-            return a / fractionB;
+            return a.Div(b);
         }
 
         /// <summary>
@@ -293,8 +344,7 @@ namespace ConsoleApp6
         /// <returns>Новая дробь, представляющая частное <paramref name="b"/> и <paramref name="a"/>.</returns>
         public static Fraction operator /(int b, Fraction a)
         {
-            Fraction fractionB = new Fraction(b, 1);
-            return fractionB / a;
+            return new Fraction(b, 1).Div(a);
         }
 
         /// <summary>

@@ -15,7 +15,7 @@ namespace ConsoleApp6
         /// <exception cref="ArgumentNullException">
         /// Выбрасывается, если параметр <paramref name="meowables"/> равен null/>.
         /// </exception>
-        public static void MeowsCare(params IMeowable[] meowables)
+        public static Dictionary<IMeowable, MeowCounter> MeowsCare(params IMeowable[] meowables)
         {
             if (meowables == null)
                 throw new ArgumentNullException(nameof(meowables));
@@ -35,12 +35,11 @@ namespace ConsoleApp6
                 counters[meowable].Meow();
             }
 
-            Console.WriteLine();
-
-            foreach (var meowable in counters)
-            {
-                Console.WriteLine($"{meowable.Key} мяукал {meowable.Value.MeowCount} раз(а)");
-            }
+            return counters;
+            //foreach (var meowable in counters)
+            //{
+            //    Console.WriteLine($"{meowable.Key} мяукал {meowable.Value.MeowCount} раз(а)");
+            //}
         }
     }
 }
