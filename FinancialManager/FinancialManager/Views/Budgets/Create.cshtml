@@ -12,31 +12,31 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="UserId" class="control-label">Email пользователя</label>
+                <label asp-for="UserId" class="control-label mt-2">Email пользователя</label>
                 <select asp-for="UserId" class ="form-control" asp-items="ViewBag.UserId">
                     <option value="">Выберите пользователя</option>
                 </select>
                 <span asp-validation-for="UserId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CategoryId" class="control-label">Категория</label>
+                <label asp-for="CategoryId" class="control-label mt-2">Категория</label>
                 <select asp-for="CategoryId" class ="form-control" asp-items="ViewBag.CategoryId">
                     <option value="">Выберите категорию</option>
                 </select>
                 <span asp-validation-for="CategoryId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="PlannedAmount" class="control-label"></label>
+                <label asp-for="PlannedAmount" class="control-label mt-2"></label>
                 <input asp-for="PlannedAmount" class="form-control" />
                 <span asp-validation-for="PlannedAmount" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="StartDate" class="control-label"></label>
+                <label asp-for="StartDate" class="control-label mt-2"></label>
                 <input asp-for="StartDate" class="form-control" />
                 <span asp-validation-for="StartDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="EndDate" class="control-label"></label>
+                <label asp-for="EndDate" class="control-label mt-2"></label>
                 <input asp-for="EndDate" class="form-control" />
                 <span asp-validation-for="EndDate" class="text-danger"></span>
             </div>

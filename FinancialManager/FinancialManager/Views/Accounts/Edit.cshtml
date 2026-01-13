@@ -13,27 +13,27 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="AccountId" />
             <div class="form-group">
-                <label asp-for="UserId" class="control-label">Email пользователя</label>
+                <label asp-for="UserId" class="control-label mt-2">Email пользователя</label>
                 <select asp-for="UserId" class="form-control" asp-items="ViewBag.UserId"></select>
                 <span asp-validation-for="UserId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="AccountName" class="control-label"></label>
+                <label asp-for="AccountName" class="control-label mt-2"></label>
                 <input asp-for="AccountName" class="form-control" />
                 <span asp-validation-for="AccountName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="AccountType" class="control-label"></label>
+                <label asp-for="AccountType" class="control-label mt-2"></label>
                 <select asp-for="AccountType" class="form-control" asp-items="ViewBag.AccountType"></select>
                 <span asp-validation-for="AccountType" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Balance" class="control-label"></label>
+                <label asp-for="Balance" class="control-label mt-2"></label>
                 <input asp-for="Balance" class="form-control" />
                 <span asp-validation-for="Balance" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CreditLimit" class="control-label"></label>
+                <label asp-for="CreditLimit" class="control-label mt-2"></label>
                 <input asp-for="CreditLimit" class="form-control" />
                 <span asp-validation-for="CreditLimit" class="text-danger"></span>
             </div>
