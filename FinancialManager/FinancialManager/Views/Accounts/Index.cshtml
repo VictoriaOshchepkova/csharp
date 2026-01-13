@@ -1,0 +1,59 @@
+﻿@model IEnumerable<FinancialManager.Models.Account>
+
+@{
+    ViewData["Title"] = "Список счетов";
+}
+
+<h1>Список счетов</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary mt-3">Добавить счет</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Email пользователя")
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AccountName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AccountType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Balance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreditLimit)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccountName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccountType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Balance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreditLimit)
+            </td>
+            <td class="text-end">
+                    <a asp-action="Edit" asp-route-id="@item.AccountId" class="btn btn-outline-primary">Редактировать</a>
+                    <a asp-action="Details" asp-route-id="@item.AccountId" class="btn btn-outline-primary">Детали</a>
+                    <a asp-action="Delete" asp-route-id="@item.AccountId" class="btn btn-outline-primary">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

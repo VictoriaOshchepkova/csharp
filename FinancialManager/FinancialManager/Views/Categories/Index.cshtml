@@ -1,0 +1,48 @@
+﻿@model IEnumerable<FinancialManager.Models.Category>
+
+@{
+    ViewData["Title"] = "Список категорий";
+}
+
+<h1>Список категорий</h1>
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+<p>
+    <a asp-action="Create" class="btn btn-primary mt-3">Добавить категорию</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryType)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryType)
+            </td>
+            <td class="text-end">
+                    <a asp-action="Edit" asp-route-id="@item.CategoryId" class="btn btn-outline-primary">Редактировать</a>
+                    <a asp-action="Details" asp-route-id="@item.CategoryId" class="btn btn-outline-primary">Детали</a>
+                    <a asp-action="Delete" asp-route-id="@item.CategoryId" class="btn btn-outline-primary">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

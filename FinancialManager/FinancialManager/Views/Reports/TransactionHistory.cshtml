@@ -1,0 +1,114 @@
+﻿@model FinancialManager.Models.ViewModels.TransactionHistoryViewModel
+
+@{
+    ViewData["Title"] = "История операций";
+}
+
+<div class="container mt-4">
+    <h1>История операций</h1>
+
+    <div class="card mt-4 mb-4">
+        <div class="card-header">
+            <h5 class="mb-0">Параметры фильтрации</h5>
+        </div>
+        <div class="card-body">
+            <form asp-action="TransactionHistory" method="post" id="historyForm">
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label asp-for="StartDate" class="control-label"></label>
+                            <input asp-for="StartDate" class="form-control" type="date" />
+                            <span asp-validation-for="StartDate" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label asp-for="EndDate" class="control-label"></label>
+                            <input asp-for="EndDate" class="form-control" type="date" />
+                            <span asp-validation-for="EndDate" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label asp-for="AccountId" class="control-label"></label>
+                            <select asp-for="AccountId" asp-items="Model.Accounts" class="form-control">
+                                <option value="">Все счета</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label asp-for="CategoryId" class="control-label"></label>
+                            <select asp-for="CategoryId" asp-items="Model.Categories" class="form-control">
+                                <option value="">Все категории</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group mt-3">
+                    <button type="submit" class="btn btn-primary">
+                        Показать операции
+                    </button>
+                    <button type="reset" class="btn btn-light">Сбросить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    @if (Model.Transactions != null && Model.Transactions.Any())
+    {
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    Результаты поиска
+                    <span class="float-end">
+                        @Model.Transactions.Count операций
+                    </span>
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover table-striped">
+                        <thead class="table-secondary">
+                            <tr>
+                                <th class="text-end">Сумма</th>
+                                <th>Время</th>
+                                <th>Дата</th>
+                                <th>Категория</th>
+                                <th>Тип</th>
+                                <th>Описание</th>
+                                <th>Счет</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var transaction in Model.Transactions)
+                            {
+                                <tr>
+                                    <td class="text-end @(transaction.IsIncome ? "text-success fw-bold" : "text-danger fw-bold")">
+                                        @(transaction.IsIncome ? "+" : "-")@transaction.Amount.ToString("N2") ₽
+                                    </td>
+                                    <td>@transaction.TransactionTime.ToString(@"hh\:mm")</td>
+                                    <td>@transaction.TransactionDate.ToString("dd.MM.yyyy")</td>
+                                    <td>@transaction.CategoryName</td>
+                                    <td>@transaction.OperationType</td>
+                                    <td>@(transaction.Description ?? "-")</td>
+                                    <td>@transaction.AccountName</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    }
+    else if (Model.Transactions != null && !Model.Transactions.Any())
+    {
+        <div class="alert alert-warning mt-3">
+            <i class="fas fa-exclamation-triangle"></i>
+            Операций по заданным критериям не найдено. Попробуйте изменить параметры фильтрации.
+        </div>
+    }
+</div>
+
