@@ -13,14 +13,13 @@ namespace ConsoleApp2
             Console.WriteLine(@"
              ЛАБОРАТОРНАЯ РАБОТА №2
                       ООП
- -----------------------------------------------
  (1) Задание №1.3 Имена;
  (2) Задание №1.5 Дом;
  (3) Задание №2.4 Сотрудники и отделы;
  (4) Задание №3.4 Сотрудники и отделы;
  (5) Задание №4.5 Создаем имена;
  (6) Задание №5.5 Дроби.
- -----------------------------------------------");
+");
 
             while (true)
             {
@@ -44,30 +43,30 @@ namespace ConsoleApp2
                 switch (task)
                 {
                     case 1:
-                        Console.WriteLine(" №1.3 Создание сущности Имя из имени, фамилии и/или отчества");
+                        Console.WriteLine("№1.3 Создание сущности Имя из имени, фамилии и/или отчества");
 
                         Name name1 = new Name(null, "Клеопатра", null);
                         Name name2 = new Name("Пушкин", "Александр", "Сергеевич");
                         Name name3 = new Name("Маяковский", "Владимир", null);
 
-                        Console.WriteLine(" Примеры:");
+                        Console.WriteLine("Примеры:");
                         Console.WriteLine(name1);
                         Console.WriteLine(name2);
                         Console.WriteLine(name3);
 
-                        Console.WriteLine(" Введите фамилию:");
+                        Console.WriteLine("Введите фамилию:");
                         string lastName = Console.ReadLine();
 
-                        Console.WriteLine(" Введите имя:");
+                        Console.WriteLine("Введите имя:");
                         string firstName = Console.ReadLine();
 
-                        Console.WriteLine(" Введите отчество:");
+                        Console.WriteLine("Введите отчество:");
                         string patronymic = Console.ReadLine();
 
                         try
                         {
                             Name newName = new Name(lastName, firstName, patronymic);
-                            Console.WriteLine($" Результат: {newName}");
+                            Console.WriteLine($"Результат: {newName}");
                         }
                         catch (Exception ex)
                         {
@@ -75,13 +74,13 @@ namespace ConsoleApp2
                         }
                         break;
                     case 2:
-                        Console.WriteLine(" №1.5 Создание сущности Дом с N этажами");
+                        Console.WriteLine("№1.5 Создание сущности Дом с N этажами");
 
                         House house1 = new House(1);
                         House house2 = new House(5);
                         House house3 = new House(23);
 
-                        Console.WriteLine(" Пример:");
+                        Console.WriteLine("Пример:");
                         Console.WriteLine(house1);
                         Console.WriteLine(house2);
                         Console.WriteLine(house3);
@@ -89,12 +88,12 @@ namespace ConsoleApp2
                         int n;
                         while (true)
                         {
-                            Console.WriteLine(" Введите натуральное число N:");
+                            Console.WriteLine("Введите натуральное число N:");
                             try
                             {
                                 n = int.Parse(Console.ReadLine());
                                 House newHouse = new House(n);
-                                Console.WriteLine($" Результат: {newHouse}");
+                                Console.WriteLine($"Результат: {newHouse}");
                                 break;
                             }
                             catch (Exception ex)
@@ -104,7 +103,7 @@ namespace ConsoleApp2
                         }
                         break;
                     case 3:
-                        Console.WriteLine(" №2.4 Создание сущности Сотрудник");
+                        Console.WriteLine("№2.4 Создание сущности Сотрудник");
 
                         Department itDepartment = new Department("IT");
                         Employee employee1 = new Employee("Петров", itDepartment);
@@ -117,7 +116,7 @@ namespace ConsoleApp2
                         Console.WriteLine(employee3);
                         break;
                     case 4:
-                        Console.WriteLine(" №3.4 Создание сущности Сотрудник с выводом всего отдела");
+                        Console.WriteLine("№3.4 Создание сущности Сотрудник с выводом всего отдела");
 
                         DepartmentExpanded itDepartmentEx = new DepartmentExpanded("IT");
                         EmployeeExpanded employeeEx1 = new EmployeeExpanded("Петров", itDepartmentEx);
@@ -136,27 +135,27 @@ namespace ConsoleApp2
                         }
                         break;
                     case 5:
-                        Console.WriteLine(" №4.5 Создание сущности Имя из имени, имени и фамилии или ФИО");
+                        Console.WriteLine("№4.5 Создание сущности Имя из имени, имени и фамилии или ФИО");
 
                         NameСonstrained nameCnst1 = new NameСonstrained("Клеопатра");
                         NameСonstrained nameCnst2 = new NameСonstrained("Александр", "Пушкин", "Сергеевич");
                         NameСonstrained nameCnst3 = new NameСonstrained("Владимир", "Маяковский");
                         NameСonstrained nameCnst4 = new NameСonstrained("Христофор", "Бонифатьевич");
 
-                        Console.WriteLine(" Примеры:");
+                        Console.WriteLine("Примеры:");
                         Console.WriteLine(nameCnst1);
                         Console.WriteLine(nameCnst2);
                         Console.WriteLine(nameCnst3);
                         Console.WriteLine(nameCnst4);
 
-                        Console.WriteLine(" Введите имя:");
+                        Console.WriteLine("Введите имя:");
                         string firstNameCnst = Console.ReadLine();
 
-                        Console.WriteLine(" Введите фамилию:");
+                        Console.WriteLine("Введите фамилию:");
 
                         string lastNameCnst = Console.ReadLine();
 
-                        Console.WriteLine(" Введите отчество:");
+                        Console.WriteLine("Введите отчество:");
                         string patronymicCnst = Console.ReadLine();
 
                         try
@@ -166,17 +165,17 @@ namespace ConsoleApp2
                             if (!string.IsNullOrEmpty(firstNameCnst) && !string.IsNullOrEmpty(lastNameCnst) && !string.IsNullOrEmpty(patronymicCnst))
                             {
                                 newNameCnst = new NameСonstrained(firstNameCnst, lastNameCnst, patronymicCnst);
-                                Console.WriteLine($" Результат: {newNameCnst}");
+                                Console.WriteLine($"Результат: {newNameCnst}");
                             }
                             else if (!string.IsNullOrEmpty(firstNameCnst) && !string.IsNullOrEmpty(lastNameCnst))
                             {
                                 newNameCnst = new NameСonstrained(lastNameCnst, firstNameCnst);
-                                Console.WriteLine($" Результат: {newNameCnst}");
+                                Console.WriteLine($"Результат: {newNameCnst}");
                             }
                             else if (!string.IsNullOrEmpty(firstNameCnst) && string.IsNullOrEmpty(patronymicCnst))
                             {
                                 newNameCnst = new NameСonstrained(firstNameCnst);
-                                Console.WriteLine($" Результат: {newNameCnst}");
+                                Console.WriteLine($"Результат: {newNameCnst}");
                             }
                             else
                             {
@@ -189,20 +188,20 @@ namespace ConsoleApp2
                         }
                         break;
                     case 6:
-                        Console.WriteLine(" №5.5 Работа с сущностью Дробь");
+                        Console.WriteLine("№5.5 Работа с сущностью Дробь");
 
                         Fraction f1 = new Fraction(1, 2);
                         Fraction f2 = new Fraction(2, 3);
                         Fraction f3 = new Fraction(3, 4);
                         Fraction f4 = new Fraction(4, 5);
 
-                        Console.WriteLine(" Созданные дроби:");
+                        Console.WriteLine("Созданные дроби:");
                         Console.WriteLine($"f1 = {f1}");
                         Console.WriteLine($"f2 = {f2}");
                         Console.WriteLine($"f3 = {f3}");
                         Console.WriteLine($"f4 = {f4}"); 
                         
-                        Console.WriteLine(" Примеры операций:");
+                        Console.WriteLine("Примеры операций:");
 
                         Fraction result2 = f1.Sum(f2);
                         Console.WriteLine($"{f1} + {f2} = {result2}");
@@ -228,7 +227,7 @@ namespace ConsoleApp2
                         Fraction result8 = f4.Div(2);
                         Console.WriteLine($"{f4} / 2 = {result8}");
 
-                        Console.WriteLine(" Вычисление f1.Sum(f2).Div(f3).Minus(5):");
+                        Console.WriteLine("Вычисление f1.Sum(f2).Div(f3).Minus(5):");
                         Fraction result9 = f1.Sum(f2).Div(f3).Minus(5);
                         Console.WriteLine($"({f1}).Sum({f2}).Div({f3}).Minus(5) = {result9}");
                         break;
