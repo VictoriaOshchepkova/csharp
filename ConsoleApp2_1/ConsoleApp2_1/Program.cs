@@ -89,13 +89,17 @@
 
         /// <summary>
         /// Выполняет задание №1.3 "Имена".
-        /// Демонстрирует создание объектов Name с различными комбинациями параметров,
-        /// а также позволяет пользователю ввести свои данные для создания имени.
         /// </summary>
         private static void RunNameTask()
         {
-            Console.WriteLine("№1.3 Создание сущности Имя из имени, фамилии и/или отчества");
+            Console.WriteLine("№1.3 Создание сущности Имя");
 
+            CreateExamplesNameTask();
+            InputNameTask();
+        }
+
+        private static void CreateExamplesNameTask()
+        {
             Name name1 = new Name(null, "Клеопатра", null);
             Name name2 = new Name("Пушкин", "Александр", "Сергеевич");
             Name name3 = new Name("Маяковский", "Владимир", null);
@@ -104,7 +108,10 @@
             Console.WriteLine(name1);
             Console.WriteLine(name2);
             Console.WriteLine(name3);
+        }
 
+        private static void InputNameTask()
+        {
             Console.WriteLine("\nВведите фамилию:");
             string? lastName = Console.ReadLine()?.Trim();
 
@@ -125,75 +132,87 @@
             }
         }
 
-        /// <summary>
-        /// Выполняет задание №1.5 "Дом".
-        /// Демонстрирует создание объектов House с различным количеством этажей,
-        /// а также позволяет пользователю ввести своё значение для создания дома.
-        /// </summary>
         private static void RunHouseTask()
         {
-            Console.WriteLine("№1.5 Создание сущности Дом с N этажами");
+            Console.WriteLine("№1.5 Создание сущности Дом");
 
+            CreateExamplesHouseTask();
+            InputHouseTask();
+        }
+
+        private static void CreateExamplesHouseTask()
+        {
             House house1 = new House(1);
             House house2 = new House(5);
             House house3 = new House(23);
 
-            Console.WriteLine("Примеры:");
+            Console.WriteLine("\nПримеры:");
             Console.WriteLine(house1);
             Console.WriteLine(house2);
             Console.WriteLine(house3);
+        }
 
+        private static void InputHouseTask()
+        {
             while (true)
             {
-                Console.WriteLine("\nВведите натуральное число N (количество этажей):");
+                Console.WriteLine("\nВведите количество этажей:");
 
                 try
                 {
-                    int n = int.Parse(Console.ReadLine() ?? string.Empty);
-                    House newHouse = new House(n);
-                    Console.WriteLine($"Результат: {newHouse}");
+                    int floors = int.Parse(Console.ReadLine() ?? string.Empty);
+
+                    House house = new House(floors);
+
+                    Console.WriteLine($"Результат: {house}");
                     break;
                 }
                 catch (FormatException)
                 {
-                    Console.WriteLine("Error: Enter an integer.");
+                    Console.WriteLine("Error: Enter integer.");
                 }
                 catch (ArgumentException ex)
                 {
                     Console.WriteLine(ex.Message);
-                }
-                catch (OverflowException)
-                {
-                    Console.WriteLine("Error: The number is too large or too small.");
                 }
             }
         }
 
         /// <summary>
         /// Выполняет задание №2.4 "Сотрудники и отделы".
-        /// Демонстрирует создание сотрудников и отдела, назначение руководителя,
-        /// а также позволяет пользователю создать свой отдел с сотрудниками.
         /// </summary>
         private static void RunEmployeeTask()
         {
-            Console.WriteLine("№2.4 Создание сущности Сотрудник");
+            Console.WriteLine("№2.4 Сотрудники и отделы");
 
+            CreateExamplesEmployeeTask();
+            InputEmployeeTask();
+        }
+
+        private static void CreateExamplesEmployeeTask()
+        {
             Department itDepartment = new Department("IT");
+
             Employee employee1 = new Employee("Петров", itDepartment);
             Employee employee2 = new Employee("Козлов", itDepartment);
             Employee employee3 = new Employee("Сидоров", itDepartment);
+
             itDepartment.Manager = employee2;
 
-            Console.WriteLine("Пример:");
+            Console.WriteLine("\nПример:");
             Console.WriteLine(employee1);
             Console.WriteLine(employee2);
             Console.WriteLine(employee3);
+        }
 
+        private static void InputEmployeeTask()
+        {
             string departmentName;
 
             while (true)
             {
                 Console.Write("\nВведите название отдела: ");
+
                 departmentName = Console.ReadLine() ?? string.Empty;
 
                 if (!string.IsNullOrWhiteSpace(departmentName))
@@ -201,10 +220,11 @@
                     break;
                 }
 
-                Console.WriteLine("Error: Department name cannot be empty.");
+                Console.WriteLine("Error: Empty name.");
             }
 
             Department department = new Department(departmentName);
+
             int count;
 
             while (true)
@@ -216,7 +236,7 @@
                     break;
                 }
 
-                Console.WriteLine("Error: Enter a positive integer.");
+                Console.WriteLine("Error: Enter positive integer.");
             }
 
             List<Employee> employees = new List<Employee>();
@@ -227,7 +247,8 @@
 
                 while (true)
                 {
-                    Console.Write($"Имя сотрудника {i + 1}: ");
+                    Console.Write($"Введите имя сотрудника {i + 1}: ");
+
                     employeeName = Console.ReadLine() ?? string.Empty;
 
                     if (!string.IsNullOrWhiteSpace(employeeName))
@@ -235,13 +256,13 @@
                         break;
                     }
 
-                    Console.WriteLine("Error: Employee name cannot be empty.");
+                    Console.WriteLine("Error: Empty name.");
                 }
 
                 employees.Add(new Employee(employeeName, department));
             }
 
-            Console.WriteLine("Список сотрудников:");
+            Console.WriteLine("\nСотрудники:");
 
             for (int i = 0; i < employees.Count; i++)
             {
@@ -252,220 +273,246 @@
 
             while (true)
             {
-                Console.Write("Выберите номер начальника отдела: ");
+                Console.Write("Введите номер начальника: ");
 
-                if (int.TryParse(Console.ReadLine(), out managerIndex) && managerIndex >= 1 && managerIndex <= employees.Count)
+                if (int.TryParse(Console.ReadLine(), out managerIndex)
+                    && managerIndex >= 1
+                    && managerIndex <= employees.Count)
                 {
                     break;
                 }
 
-                Console.WriteLine($"Error: Enter a number between 1 and {employees.Count}.");
+                Console.WriteLine("Error: Invalid number.");
             }
 
             department.Manager = employees[managerIndex - 1];
 
             Console.WriteLine("\nРезультат:");
 
-            foreach (Employee emp in employees)
+            foreach (Employee employee in employees)
             {
-                Console.WriteLine(emp);
+                Console.WriteLine(employee);
             }
         }
 
         /// <summary>
         /// Выполняет задание №3.4 "Сотрудники и отделы (расширенная версия)".
-        /// Демонстрирует создание сотрудников, которые автоматически добавляются в отдел,
-        /// возможность просмотра всех сотрудников отдела, а также позволяет пользователю
-        /// создать несколько отделов и искать сотрудников по имени.
         /// </summary>
         private static void RunEmployeeExpandedTask()
         {
-            Console.WriteLine("№3.4 Создание сущности Сотрудник с выводом всего отдела");
+            Console.WriteLine("№3.4 Расширенные сотрудники и отделы");
 
-            DepartmentExpanded itDepartmentEx = new DepartmentExpanded("IT");
-            EmployeeExpanded employeeEx1 = new EmployeeExpanded("Петров", itDepartmentEx);
-            EmployeeExpanded employeeEx2 = new EmployeeExpanded("Козлов", itDepartmentEx);
-            EmployeeExpanded employeeEx3 = new EmployeeExpanded("Сидоров", itDepartmentEx);
-            itDepartmentEx.Manager = employeeEx2;
+            CreateExamplesEmployeeExpandedTask();
+            InputEmployeeExpandedTask();
+        }
 
-            Console.WriteLine("Пример:");
-            Console.WriteLine(employeeEx1);
-            Console.WriteLine(employeeEx2);
-            Console.WriteLine(employeeEx3);
+        private static void CreateExamplesEmployeeExpandedTask()
+        {
+            DepartmentExpanded department = new DepartmentExpanded("IT");
 
-            Console.WriteLine($"Список всех сотрудников отдела {employeeEx1.Department.Name}, в котором работает {employeeEx1.Name}:");
+            EmployeeExpanded employee1 = new EmployeeExpanded("Петров", department);
+            EmployeeExpanded employee2 = new EmployeeExpanded("Козлов", department);
+            EmployeeExpanded employee3 = new EmployeeExpanded("Сидоров", department);
 
-            foreach (EmployeeExpanded emp in employeeEx1.Department.Employees)
+            department.Manager = employee2;
+
+            Console.WriteLine("\nПример:");
+
+            Console.WriteLine(employee1);
+            Console.WriteLine(employee2);
+            Console.WriteLine(employee3);
+
+            Console.WriteLine("\nСотрудники отдела:");
+
+            foreach (EmployeeExpanded employee in department.Employees)
             {
-                Console.WriteLine($"- {emp.Name}");
+                Console.WriteLine(employee.Name);
             }
+        }
 
+        private static void InputEmployeeExpandedTask()
+        {
             int departmentCount;
 
-            while (true) // Ввод с клавиатуры
+            while (true)
             {
                 Console.Write("\nВведите количество отделов: ");
 
-                if (int.TryParse(Console.ReadLine(), out departmentCount) && departmentCount > 0)
+                if (int.TryParse(Console.ReadLine(), out departmentCount)
+                    && departmentCount > 0)
                 {
                     break;
                 }
 
-                Console.WriteLine("Error: Enter a positive integer.");
+                Console.WriteLine("Error: Enter positive integer.");
             }
 
-            List<DepartmentExpanded> departments = new List<DepartmentExpanded>();
             List<EmployeeExpanded> allEmployees = new List<EmployeeExpanded>();
 
             for (int d = 0; d < departmentCount; d++)
             {
-                Console.WriteLine($"\nОтдел {d + 1}.");
+                Console.WriteLine($"\nОтдел {d + 1}");
 
-                string departmentName;
+                DepartmentExpanded department = CreateDepartmentFromInput(allEmployees);
 
-                while (true)
-                {
-                    Console.Write("Введите название отдела: ");
-                    departmentName = Console.ReadLine() ?? string.Empty;
-
-                    if (!string.IsNullOrWhiteSpace(departmentName))
-                    {
-                        break;
-                    }
-
-                    Console.WriteLine("Error: Department name cannot be empty.");
-                }
-
-                DepartmentExpanded department = new DepartmentExpanded(departmentName);
-                departments.Add(department);
-
-                int count;
-
-                while (true)
-                {
-                    Console.Write("Введите количество сотрудников: ");
-
-                    if (int.TryParse(Console.ReadLine(), out count) && count > 0)
-                    {
-                        break;
-                    }
-
-                    Console.WriteLine("Error: Enter a positive integer.");
-                }
-
-                List<EmployeeExpanded> departmentEmployees = new List<EmployeeExpanded>();
-
-                for (int i = 0; i < count; i++)
-                {
-                    string employeeName;
-
-                    while (true)
-                    {
-                        Console.Write($"Имя сотрудника {i + 1}: ");
-                        employeeName = Console.ReadLine() ?? string.Empty;
-
-                        if (!string.IsNullOrWhiteSpace(employeeName))
-                        {
-                            break;
-                        }
-
-                        Console.WriteLine("Error: Employee name cannot be empty.");
-                    }
-
-                    EmployeeExpanded employee = new EmployeeExpanded(employeeName, department);
-                    departmentEmployees.Add(employee);
-                    allEmployees.Add(employee);
-                }
-
-                int managerIndex;
-
-                while (true)
-                {
-                    Console.Write("Выберите номер начальника отдела: ");
-
-                    if (int.TryParse(Console.ReadLine(), out managerIndex) && managerIndex >= 1 && managerIndex <= departmentEmployees.Count)
-                    {
-                        break;
-                    }
-
-                    Console.WriteLine($"Error: Enter a number between 1 and {departmentEmployees.Count}.");
-                }
-
-                department.Manager = departmentEmployees[managerIndex - 1];
+                Console.WriteLine($"\nСоздан отдел {department.Name}");
             }
+
+            FindEmployeeDepartment(allEmployees);
+        }
+
+        private static DepartmentExpanded CreateDepartmentFromInput(List<EmployeeExpanded> allEmployees)
+        {
+            string departmentName;
 
             while (true)
             {
-                Console.Write("\nВведите имя сотрудника для просмотра его отдела: ");
+                Console.Write("Введите название отдела: ");
+
+                departmentName = Console.ReadLine() ?? string.Empty;
+
+                if (!string.IsNullOrWhiteSpace(departmentName))
+                {
+                    break;
+                }
+
+                Console.WriteLine("Error: Empty name.");
+            }
+
+            DepartmentExpanded department = new DepartmentExpanded(departmentName);
+
+            int employeeCount;
+
+            while (true)
+            {
+                Console.Write("Введите количество сотрудников: ");
+
+                if (int.TryParse(Console.ReadLine(), out employeeCount)
+                    && employeeCount > 0)
+                {
+                    break;
+                }
+
+                Console.WriteLine("Error: Enter positive integer.");
+            }
+
+            List<EmployeeExpanded> employees = new List<EmployeeExpanded>();
+
+            for (int i = 0; i < employeeCount; i++)
+            {
+                string employeeName;
+
+                while (true)
+                {
+                    Console.Write($"Введите имя сотрудника {i + 1}: ");
+
+                    employeeName = Console.ReadLine() ?? string.Empty;
+
+                    if (!string.IsNullOrWhiteSpace(employeeName))
+                    {
+                        break;
+                    }
+
+                    Console.WriteLine("Error: Empty name.");
+                }
+
+                EmployeeExpanded employee = new EmployeeExpanded(employeeName, department);
+
+                employees.Add(employee);
+                allEmployees.Add(employee);
+            }
+
+            SelectManager(department, employees);
+
+            return department;
+        }
+
+        private static void SelectManager(
+            DepartmentExpanded department,
+            List<EmployeeExpanded> employees)
+        {
+            int managerIndex;
+
+            while (true)
+            {
+                Console.Write("Введите номер начальника: ");
+
+                if (int.TryParse(Console.ReadLine(), out managerIndex)
+                    && managerIndex >= 1
+                    && managerIndex <= employees.Count)
+                {
+                    break;
+                }
+
+                Console.WriteLine("Error: Invalid number.");
+            }
+
+            department.Manager = employees[managerIndex - 1];
+        }
+
+        private static void FindEmployeeDepartment(List<EmployeeExpanded> allEmployees)
+        {
+            while (true)
+            {
+                Console.Write("\nВведите имя сотрудника: ");
+
                 string searchName = Console.ReadLine() ?? string.Empty;
 
-                if (string.IsNullOrWhiteSpace(searchName))
+                EmployeeExpanded? employee =
+                    allEmployees.Find(e => e.Name == searchName);
+
+                if (employee == null)
                 {
-                    Console.WriteLine("Error: Name cannot be empty.");
+                    Console.WriteLine("Сотрудник не найден.");
                     continue;
                 }
 
-                EmployeeExpanded? foundEmployee = allEmployees.Find(e => e.Name == searchName);
+                Console.WriteLine($"\n{employee}");
 
-                if (foundEmployee == null)
+                Console.WriteLine("Сотрудники отдела:");
+
+                foreach (EmployeeExpanded emp in employee.Department.Employees)
                 {
-                    Console.WriteLine($"Сотрудник '{searchName}' не найден.");
-                    continue;
+                    Console.WriteLine(emp.Name);
                 }
 
-                Console.WriteLine($"\n{foundEmployee}");
-                Console.WriteLine($"Список всех сотрудников отдела {foundEmployee.Department.Name}:");
-
-                foreach (EmployeeExpanded emp in foundEmployee.Department.Employees)
-                {
-                    Console.WriteLine($"- {emp.Name}");
-                }
+                break;
             }
         }
 
         /// <summary>
         /// Выполняет задание №4.5 "Создаем имена".
-        /// Демонстрирует создание объектов NameConstrained с различными комбинациями
-        /// обязательных и необязательных параметров, а также позволяет пользователю
-        /// ввести свои данные для создания имени с ограничениями.
         /// </summary>
         private static void RunConstrainedNameTask()
         {
-            Console.WriteLine("№4.5 Создание сущности Имя из имени, имени и фамилии или ФИО");
+            Console.WriteLine("№4.5 Имена с ограничениями");
 
-            NameConstrained nameCnst1 = new NameConstrained("Клеопатра");
-            NameConstrained nameCnst2 = new NameConstrained("Александр", "Пушкин", "Сергеевич");
-            NameConstrained nameCnst3 = new NameConstrained("Владимир", "Маяковский");
-            NameConstrained nameCnst4 = new NameConstrained("Христофор", "Бонифатьевич");
+            CreateExamplesConstrainedNameTask();
+            InputConstrainedNameTask();
+        }
 
-            Console.WriteLine("Примеры:");
-            Console.WriteLine(nameCnst1);
-            Console.WriteLine(nameCnst2);
-            Console.WriteLine(nameCnst3);
-            Console.WriteLine(nameCnst4);
+        private static void CreateExamplesConstrainedNameTask()
+        {
+            NameConstrained name1 = new NameConstrained("Клеопатра");
+            NameConstrained name2 = new NameConstrained("Александр", "Пушкин", "Сергеевич");
+            NameConstrained name3 = new NameConstrained("Владимир", "Маяковский");
 
-            Console.WriteLine("\nВведите данные для создания имени:");
+            Console.WriteLine("\nПримеры:");
+            Console.WriteLine(name1);
+            Console.WriteLine(name2);
+            Console.WriteLine(name3);
+        }
 
-            string firstNameCnst;
+        private static void InputConstrainedNameTask()
+        {
+            Console.Write("\nВведите имя (обязательно): ");
+            string firstNameCnst = Console.ReadLine() ?? string.Empty;
 
-            while (true)
-            {
-                Console.Write("Введите имя (обязательно): ");
-                firstNameCnst = Console.ReadLine()?.Trim() ?? string.Empty;
+            Console.Write("Введите фамилию: ");
+            string lastNameCnst = Console.ReadLine() ?? string.Empty;
 
-                if (!string.IsNullOrWhiteSpace(firstNameCnst))
-                {
-                    break;
-                }
-
-                Console.WriteLine("Error: Name is required.");
-            }
-
-            Console.Write("Введите фамилию (необязательно): ");
-            string lastNameCnst = Console.ReadLine()?.Trim() ?? string.Empty;
-
-            Console.Write("Введите отчество (необязательно): ");
-            string patronymicCnst = Console.ReadLine()?.Trim() ?? string.Empty;
+            Console.Write("Введите отчество: ");
+            string patronymicCnst = Console.ReadLine() ?? string.Empty;
 
             try
             {
@@ -476,14 +523,14 @@
                     newNameCnst = new NameConstrained(firstNameCnst, lastNameCnst, patronymicCnst);
                     Console.WriteLine($"Результат: {newNameCnst}");
                 }
-                else if (!string.IsNullOrEmpty(firstNameCnst) && !string.IsNullOrEmpty(lastNameCnst))
+                else if (!string.IsNullOrEmpty(firstNameCnst) && !string.IsNullOrEmpty(lastNameCnst) && string.IsNullOrEmpty(patronymicCnst))
                 {
                     newNameCnst = new NameConstrained(lastNameCnst, firstNameCnst);
                     Console.WriteLine($"Результат: {newNameCnst}");
                 }
-                else if (!string.IsNullOrEmpty(firstNameCnst))
+                else if (!string.IsNullOrEmpty(firstNameCnst) && string.IsNullOrEmpty(lastNameCnst) && string.IsNullOrEmpty(patronymicCnst))
                 {
-                    newNameCnst = new NameConstrained(firstNameCnst);
+                    newNameCnst = new NameConstrained(firstNameCnst, lastNameCnst, patronymicCnst);
                     Console.WriteLine($"Результат: {newNameCnst}");
                 }
                 else
@@ -499,81 +546,81 @@
 
         /// <summary>
         /// Выполняет задание №5.5 "Дроби".
-        /// Демонстрирует создание дробей, выполнение арифметических операций
-        /// (сложение, вычитание, умножение, деление) с дробями и целыми числами,
-        /// а также позволяет пользователю ввести свои дроби для выполнения операций.
         /// </summary>
         private static void RunFractionTask()
         {
-            Console.WriteLine("№5.5 Работа с сущностью Дробь");
+            Console.WriteLine("№5.5 Дроби");
 
+            CreateExamplesFractionTask();
+            InputFractionTask();
+        }
+
+        private static void CreateExamplesFractionTask()
+        {
             Fraction f1 = new Fraction(1, 2);
             Fraction f2 = new Fraction(2, 3);
-            Fraction f3 = new Fraction(3, 4);
-            Fraction f4 = new Fraction(4, 5);
 
-            Console.WriteLine("Примеры готовых дробей:");
-            Console.WriteLine($"f1 = {f1}");
-            Console.WriteLine($"f2 = {f2}");
-            Console.WriteLine($"f3 = {f3}");
-            Console.WriteLine($"f4 = {f4}");
+            Console.WriteLine("\nПримеры:");
 
-            Console.WriteLine("\nПримеры операций с готовыми дробями:");
             Console.WriteLine($"{f1} + {f2} = {f1.Sum(f2)}");
-            Console.WriteLine($"{f3} - {f4} = {f3.Minus(f4)}");
+            Console.WriteLine($"{f1} - {f2} = {f1.Minus(f2)}");
             Console.WriteLine($"{f1} * {f2} = {f1.Multiply(f2)}");
-            Console.WriteLine($"{f3} / {f4} = {f3.Div(f4)}");
-            Console.WriteLine($"{f1} + 2 = {f1.Sum(2)}");
-            Console.WriteLine($"{f3} - 1 = {f3.Minus(1)}");
-            Console.WriteLine($"{f2} * 3 = {f2.Multiply(3)}");
-            Console.WriteLine($"{f4} / 2 = {f4.Div(2)}");
+            Console.WriteLine($"{f1} / {f2} = {f1.Div(f2)}");
+        }
 
-            Console.WriteLine($"\n({f1}).Sum({f2}).Div({f3}).Minus(5) = {f1.Sum(f2).Div(f3).Minus(5)}");
-
+        private static void InputFractionTask()
+        {
             try
             {
                 Console.WriteLine("\nВведите первую дробь:");
-                Fraction fracA = ReadFractionFromConsole("A");
+
+                Fraction fraction1 = ReadFractionFromConsole("A");
 
                 Console.WriteLine("\nВведите вторую дробь:");
-                Fraction fracB = ReadFractionFromConsole("B");
 
-                Console.WriteLine("\nВыберите операцию:");
-                Console.WriteLine("(1) Сложение");
+                Fraction fraction2 = ReadFractionFromConsole("B");
+
+                Console.WriteLine("\n(1) Сложение");
                 Console.WriteLine("(2) Вычитание");
                 Console.WriteLine("(3) Умножение");
                 Console.WriteLine("(4) Деление");
-                Console.Write("Введите номер операции: ");
 
                 int operation;
 
-                while (!int.TryParse(Console.ReadLine(), out operation) || operation < 1 || operation > 4)
+                while (true)
                 {
-                    Console.WriteLine("Error: Enter a number between 1 and 4.");
                     Console.Write("Введите номер операции: ");
+
+                    if (int.TryParse(Console.ReadLine(), out operation)
+                        && operation >= 1
+                        && operation <= 4)
+                    {
+                        break;
+                    }
+
+                    Console.WriteLine("Error: Invalid number.");
                 }
 
                 switch (operation)
                 {
                     case 1:
-                        Console.WriteLine($"\n{fracA} + {fracB} = {fracA.Sum(fracB)}");
+                        Console.WriteLine(fraction1.Sum(fraction2));
                         break;
+
                     case 2:
-                        Console.WriteLine($"\n{fracA} - {fracB} = {fracA.Minus(fracB)}");
+                        Console.WriteLine(fraction1.Minus(fraction2));
                         break;
+
                     case 3:
-                        Console.WriteLine($"\n{fracA} * {fracB} = {fracA.Multiply(fracB)}");
+                        Console.WriteLine(fraction1.Multiply(fraction2));
                         break;
+
                     case 4:
-                        Console.WriteLine($"\n{fracA} / {fracB} = {fracA.Div(fracB)}");
+                        Console.WriteLine(fraction1.Div(fraction2));
                         break;
                 }
             }
-            catch (ArgumentException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            catch (DivideByZeroException ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
