@@ -24,7 +24,7 @@
 
             while (true)
             {
-                int task = GetUserTaskChoice(); // Принцип единой ответственности
+                int task = GetUserTaskChoice();
 
                 switch (task)
                 {
@@ -98,6 +98,9 @@
             InputNameTask();
         }
 
+        /// <summary>
+        /// Создает примеры объектов Name для демонстрации.
+        /// </summary>
         private static void CreateExamplesNameTask()
         {
             Name name1 = new Name(null, "Клеопатра", null);
@@ -110,6 +113,9 @@
             Console.WriteLine(name3);
         }
 
+        /// <summary>
+        /// Запрашивает у пользователя данные для создания объекта Name.
+        /// </summary>
         private static void InputNameTask()
         {
             Console.WriteLine("\nВведите фамилию:");
@@ -132,6 +138,9 @@
             }
         }
 
+        /// <summary>
+        /// Выполняет задание №1.5 "Дом".
+        /// </summary>
         private static void RunHouseTask()
         {
             Console.WriteLine("№1.5 Создание сущности Дом");
@@ -140,6 +149,9 @@
             InputHouseTask();
         }
 
+        /// <summary>
+        /// Создает примеры объектов House для демонстрации.
+        /// </summary>
         private static void CreateExamplesHouseTask()
         {
             House house1 = new House(1);
@@ -152,6 +164,9 @@
             Console.WriteLine(house3);
         }
 
+        /// <summary>
+        /// Запрашивает у пользователя данные для создания объекта House.
+        /// </summary>
         private static void InputHouseTask()
         {
             while (true)
@@ -189,6 +204,9 @@
             InputEmployeeTask();
         }
 
+        /// <summary>
+        /// Создает примеры объектов Employee и Department для демонстрации.
+        /// </summary>
         private static void CreateExamplesEmployeeTask()
         {
             Department itDepartment = new Department("IT");
@@ -205,6 +223,9 @@
             Console.WriteLine(employee3);
         }
 
+        /// <summary>
+        /// Запрашивает у пользователя данные для создания сотрудников и отделов.
+        /// </summary>
         private static void InputEmployeeTask()
         {
             string departmentName;
@@ -306,6 +327,9 @@
             InputEmployeeExpandedTask();
         }
 
+        /// <summary>
+        /// Создает примеры объектов EmployeeExpanded и DepartmentExpanded для демонстрации.
+        /// </summary>
         private static void CreateExamplesEmployeeExpandedTask()
         {
             DepartmentExpanded department = new DepartmentExpanded("IT");
@@ -330,6 +354,9 @@
             }
         }
 
+        /// <summary>
+        /// Запрашивает у пользователя данные для создания расширенных сотрудников и отделов.
+        /// </summary>
         private static void InputEmployeeExpandedTask()
         {
             int departmentCount;
@@ -361,6 +388,11 @@
             FindEmployeeDepartment(allEmployees);
         }
 
+        /// <summary>
+        /// Создает отдел на основе пользовательского ввода.
+        /// </summary>
+        /// <param name="allEmployees">Список всех сотрудников для добавления новых.</param>
+        /// <returns>Созданный объект DepartmentExpanded.</returns>
         private static DepartmentExpanded CreateDepartmentFromInput(List<EmployeeExpanded> allEmployees)
         {
             string departmentName;
@@ -427,6 +459,11 @@
             return department;
         }
 
+        /// <summary>
+        /// Выбирает начальника отдела из списка сотрудников.
+        /// </summary>
+        /// <param name="department">Отдел, для которого выбирается начальник.</param>
+        /// <param name="employees">Список сотрудников отдела.</param>
         private static void SelectManager(
             DepartmentExpanded department,
             List<EmployeeExpanded> employees)
@@ -450,6 +487,10 @@
             department.Manager = employees[managerIndex - 1];
         }
 
+        /// <summary>
+        /// Находит отдел сотрудника по его имени и выводит информацию.
+        /// </summary>
+        /// <param name="allEmployees">Список всех сотрудников для поиска.</param>
         private static void FindEmployeeDepartment(List<EmployeeExpanded> allEmployees)
         {
             while (true)
@@ -491,6 +532,9 @@
             InputConstrainedNameTask();
         }
 
+        /// <summary>
+        /// Создает примеры объектов NameConstrained для демонстрации.
+        /// </summary>
         private static void CreateExamplesConstrainedNameTask()
         {
             NameConstrained name1 = new NameConstrained("Клеопатра");
@@ -503,6 +547,9 @@
             Console.WriteLine(name3);
         }
 
+        /// <summary>
+        /// Запрашивает у пользователя данные для создания объекта NameConstrained.
+        /// </summary>
         private static void InputConstrainedNameTask()
         {
             Console.Write("\nВведите имя (обязательно): ");
@@ -555,6 +602,9 @@
             InputFractionTask();
         }
 
+        /// <summary>
+        /// Создает примеры объектов Fraction и демонстрирует арифметические операции.
+        /// </summary>
         private static void CreateExamplesFractionTask()
         {
             Fraction f1 = new Fraction(1, 2);
@@ -568,6 +618,9 @@
             Console.WriteLine($"{f1} / {f2} = {f1.Div(f2)}");
         }
 
+        /// <summary>
+        /// Запрашивает у пользователя данные для создания дробей и выполнения операций.
+        /// </summary>
         private static void InputFractionTask()
         {
             try
