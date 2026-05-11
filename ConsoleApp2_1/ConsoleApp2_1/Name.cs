@@ -1,11 +1,19 @@
 ﻿namespace ConsoleApp2_1
 {
+    /// <summary>
+    /// Представляет полное имя человека, состоящее из фамилии, имени и отчества.
+    /// Поля могут быть не указаны (null).
+    /// </summary>
     public class Name : NameBase
     {
         private string? _lastName;  // Приватные атрибуты, _camelCase 
         private string? _firstName;
         private string? _patronymic;
 
+        /// <summary>
+        /// Получает или задает фамилию.
+        /// </summary>
+        /// <exception cref="ArgumentException">Выбрасывается, если фамилия начинается не с заглавной буквы.</exception>
         public string LastName
         {
             get { return _lastName; }
@@ -16,6 +24,10 @@
             }
         }
 
+        /// <summary>
+        /// Получает или задает имя.
+        /// </summary>
+        /// <exception cref="ArgumentException">Выбрасывается, если имя начинается не с заглавной буквы.</exception>
         public string FirstName
         {
             get { return _firstName; }
@@ -26,6 +38,10 @@
             }
         }
 
+        /// <summary>
+        /// Получает или задает отчество.
+        /// </summary>
+        /// <exception cref="ArgumentException">Выбрасывается, если отчество начинается не с заглавной буквы.</exception>
         public string Patronymic
         {
             get { return _patronymic; }
@@ -36,6 +52,9 @@
             }
         }
 
+        /// <summary>
+        /// Инициализирует новый экземпляр класса Name со значениями по умолчанию "Иванов Иван Иванович".
+        /// </summary>
         public Name()
         {
             LastName = "Иванов"; // Использование сеттеров
@@ -43,6 +62,13 @@
             Patronymic = "Иванович";
         }
 
+        /// <summary>
+        /// Инициализирует новый экземпляр класса Name с указанными компонентами.
+        /// </summary>
+        /// <param name="lastName">Фамилия (может быть null).</param>
+        /// <param name="firstName">Имя (может быть null).</param>
+        /// <param name="patronymic">Отчество (может быть null).</param>
+        /// <exception cref="ArgumentException">Выбрасывается, если какой-либо компонент начинается не с заглавной буквы.</exception>
         public Name(string? lastName, string? firstName, string? patronymic)
         {
             LastName = lastName;
@@ -50,6 +76,10 @@
             Patronymic = patronymic;
         }
 
+        /// <summary>
+        /// Возвращает строковое представление имени, объединяя все непустые компоненты через пробел.
+        /// </summary>
+        /// <returns>Строка вида "Фамилия Имя Отчество" (пропуская отсутствующие компоненты).</returns>
         public override string ToString()
         {
             var parts = new List<string?>(); // Лучше читаемость

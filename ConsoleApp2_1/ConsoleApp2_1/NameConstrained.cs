@@ -1,11 +1,18 @@
 ﻿namespace ConsoleApp2_1
 {
+    /// <summary>
+    /// Представляет имя с ограничениями: обязательно должно быть указано хотя бы имя.
+    /// </summary>
     public class NameConstrained : NameBase
     {
         private string? _firstName;  // Приватные атрибуты, _camelCase, nullable
         private string? _lastName;
         private string? _patronymic;
 
+        /// <summary>
+        /// Получает или задает имя.
+        /// </summary>
+        /// <exception cref="ArgumentException">Выбрасывается, если имя начинается не с заглавной буквы.</exception>
         public string? FirstName
         {
             get { return _firstName; }
@@ -16,6 +23,10 @@
             }
         }
 
+        /// <summary>
+        /// Получает или задает фамилию.
+        /// </summary>
+        /// <exception cref="ArgumentException">Выбрасывается, если фамилия начинается не с заглавной буквы.</exception>
         public string? LastName
         {
             get { return _lastName; }
@@ -26,6 +37,10 @@
             }
         }
 
+        /// <summary>
+        /// Получает или задает отчество.
+        /// </summary>
+        /// <exception cref="ArgumentException">Выбрасывается, если отчество начинается не с заглавной буквы.</exception>
         public string? Patronymic
         {
             get { return _patronymic; }
@@ -36,6 +51,9 @@
             }
         }
 
+        /// <summary>
+        /// Инициализирует новый экземпляр класса NameConstrained со значениями по умолчанию "Иван Иванов Иванович".
+        /// </summary>
         public NameConstrained()
         {
             FirstName = "Иван"; // Использование сеттеров
@@ -43,6 +61,11 @@
             Patronymic = "Иванович";
         }
 
+        /// <summary>
+        /// Инициализирует новый экземпляр класса NameConstrained только с именем.
+        /// </summary>
+        /// <param name="firstName">Имя (обязательно).</param>
+        /// <exception cref="ArgumentException">Выбрасывается, если имя не указано.</exception>
         public NameConstrained(string firstName)
         {
             if (string.IsNullOrEmpty(firstName))
@@ -52,6 +75,13 @@
 
             FirstName = firstName;
         }
+
+        /// <summary>
+        /// Инициализирует новый экземпляр класса NameConstrained с именем и фамилией.
+        /// </summary>
+        /// <param name="firstName">Имя (обязательно).</param>
+        /// <param name="lastName">Фамилия (обязательна).</param>
+        /// <exception cref="ArgumentException">Выбрасывается, если имя или фамилия не указаны.</exception>
         public NameConstrained(string firstName, string lastName)
         {
             if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName))
@@ -62,6 +92,14 @@
             FirstName = firstName;
             LastName = lastName;
         }
+
+        /// <summary>
+        /// Инициализирует новый экземпляр класса NameConstrained с полным именем.
+        /// </summary>
+        /// <param name="firstName">Имя (обязательно).</param>
+        /// <param name="lastName">Фамилия (обязательна).</param>
+        /// <param name="patronymic">Отчество (обязательно).</param>
+        /// <exception cref="ArgumentException">Выбрасывается, если какое-либо поле не указано.</exception>
         public NameConstrained(string firstName, string lastName, string patronymic)
         {
             if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName) || string.IsNullOrEmpty(patronymic))
@@ -74,6 +112,10 @@
             Patronymic = patronymic;
         }
 
+        /// <summary>
+        /// Возвращает строковое представление имени, объединяя все непустые компоненты через пробел.
+        /// </summary>
+        /// <returns>Строка вида "Фамилия Имя Отчество" (пропуская отсутствующие компоненты).</returns>
         public override string ToString()
         {
             var parts = new List<string?>(); // Лучше читаемость

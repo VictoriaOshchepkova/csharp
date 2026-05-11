@@ -1,9 +1,16 @@
 ﻿namespace ConsoleApp2_1
 {
+    /// <summary>
+    /// Представляет дом с определенным количеством этажей.
+    /// </summary>
     public class House
     {
         private int _floors; // _camelCase 
 
+        /// <summary>
+        /// Получает или задает количество этажей в доме.
+        /// </summary>
+        /// <exception cref="ArgumentException">Выбрасывается, когда значение меньше или равно 0.</exception>
         public int Floors
         {
             get { return _floors; }
@@ -17,11 +24,20 @@
             }
         }
 
+        /// <summary>
+        /// Инициализирует новый экземпляр класса House.
+        /// </summary>
+        /// <param name="floors">Количество этажей (должно быть положительным).</param>
+        /// <exception cref="ArgumentException">Выбрасывается, когда количество этажей меньше или равно 0.</exception>
         public House(int floors)
         {
             Floors = floors;
         }
 
+        /// <summary>
+        /// Возвращает строковое представление дома с правильным падежом для слова "этаж".
+        /// </summary>
+        /// <returns>Строка вида "дом с N этажом" или "дом с N этажами".</returns>
         public override string ToString()
         {
             string result;
