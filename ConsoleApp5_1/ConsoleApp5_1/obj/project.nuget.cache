@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "APA+QExbW84=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ARTEL PC\\Documents\\GitHub\\csharp\\ConsoleApp5_1\\ConsoleApp5_1\\ConsoleApp5_1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ARTEL PC\\.nuget\\packages\\aspose.cells\\26.5.1\\aspose.cells.26.5.1.nupkg.sha512",
+    "C:\\Users\\ARTEL PC\\.nuget\\packages\\skiasharp\\3.119.0\\skiasharp.3.119.0.nupkg.sha512",
+    "C:\\Users\\ARTEL PC\\.nuget\\packages\\skiasharp.nativeassets.macos\\3.119.0\\skiasharp.nativeassets.macos.3.119.0.nupkg.sha512",
+    "C:\\Users\\ARTEL PC\\.nuget\\packages\\skiasharp.nativeassets.win32\\3.119.0\\skiasharp.nativeassets.win32.3.119.0.nupkg.sha512",
+    "C:\\Users\\ARTEL PC\\.nuget\\packages\\system.security.cryptography.pkcs\\9.0.0\\system.security.cryptography.pkcs.9.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

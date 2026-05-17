@@ -1,0 +1,410 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ConsoleApp5_1</name>
+    </assembly>
+    <members>
+        <member name="T:Client">
+            <summary>
+            Представляет информацию о клиенте пиццерии.
+            </summary>
+        </member>
+        <member name="P:Client.ClientID">
+            <summary>
+            Получает или задаёт уникальный идентификатор клиента.
+            </summary>
+        </member>
+        <member name="P:Client.LastName">
+            <summary>
+            Получает или задаёт фамилию клиента.
+            </summary>
+        </member>
+        <member name="P:Client.Name">
+            <summary>
+            Получает или задаёт имя клиента.
+            </summary>
+        </member>
+        <member name="P:Client.Patronymic">
+            <summary>
+            Получает или задаёт отчество клиента.
+            </summary>
+        </member>
+        <member name="P:Client.City">
+            <summary>
+            Получает или задаёт город проживания клиента.
+            </summary>
+        </member>
+        <member name="M:Client.#ctor(System.Int32,System.String,System.String,System.String,System.String)">
+            <summary>
+            Инициализирует новый экземпляр класса Client.
+            </summary>
+            <param name="clientId">Уникальный идентификатор клиента.</param>
+            <param name="lastName">Фамилия клиента.</param>
+            <param name="name">Имя клиента.</param>
+            <param name="patronymic">Отчество клиента.</param>
+            <param name="city">Город проживания клиента.</param>
+        </member>
+        <member name="M:Client.ToString">
+            <summary>
+            Возвращает строковое представление клиента.
+            </summary>
+            <returns>Строка с информацией о клиенте.</returns>
+        </member>
+        <member name="T:Menu">
+            <summary>
+            Представляет информацию о блюде из меню.
+            </summary>
+        </member>
+        <member name="P:Menu.DishID">
+            <summary>
+            Получает или задаёт уникальный идентификатор блюда.
+            </summary>
+        </member>
+        <member name="P:Menu.Name">
+            <summary>
+            Получает или задаёт название блюда.
+            </summary>
+        </member>
+        <member name="P:Menu.Price">
+            <summary>
+            Получает или задаёт цену блюда.
+            </summary>
+        </member>
+        <member name="M:Menu.#ctor(System.Int32,System.String,System.Decimal)">
+            <summary>
+            Инициализирует новый экземпляр класса Menu.
+            </summary>
+            <param name="dishId">Уникальный идентификатор блюда.</param>
+            <param name="name">Название блюда.</param>
+            <param name="price">Цена блюда.</param>
+        </member>
+        <member name="M:Menu.ToString">
+            <summary>
+            Возвращает строковое представление блюда.
+            </summary>
+            <returns>Строка с информацией о блюде.</returns>
+        </member>
+        <member name="T:Order">
+            <summary>
+            Представляет информацию о заказе в пиццерии.
+            </summary>
+        </member>
+        <member name="P:Order.OrderID">
+            <summary>
+            Получает или задаёт уникальный идентификатор заказа.
+            </summary>
+        </member>
+        <member name="P:Order.Date">
+            <summary>
+            Получает или задаёт дату заказа.
+            </summary>
+        </member>
+        <member name="P:Order.ClientID">
+            <summary>
+            Получает или задаёт идентификатор клиента, сделавшего заказ.
+            </summary>
+        </member>
+        <member name="P:Order.Price">
+            <summary>
+            Получает или задаёт стоимость доставки.
+            </summary>
+        </member>
+        <member name="P:Order.Status">
+            <summary>
+            Получает или задаёт статус выполнения заказа.
+            </summary>
+        </member>
+        <member name="M:Order.#ctor(System.Int32,System.DateTime,System.Int32,System.Decimal,System.String)">
+            <summary>
+            Инициализирует новый экземпляр класса Order.
+            </summary>
+            <param name="orderId">Уникальный идентификатор заказа.</param>
+            <param name="date">Дата заказа.</param>
+            <param name="clientId">Идентификатор клиента.</param>
+            <param name="price">Стоимость доставки.</param>
+            <param name="status">Статус заказа.</param>
+        </member>
+        <member name="M:Order.ToString">
+            <summary>
+            Возвращает строковое представление заказа.
+            </summary>
+            <returns>Строка с информацией о заказе.</returns>
+        </member>
+        <member name="T:OrderItem">
+            <summary>
+            Представляет информацию о позиции в заказе (блюдо и количество).
+            </summary>
+        </member>
+        <member name="P:OrderItem.OrderItemID">
+            <summary>
+            Получает или задаёт уникальный идентификатор позиции заказа.
+            </summary>
+        </member>
+        <member name="P:OrderItem.OrderID">
+            <summary>
+            Получает или задаёт идентификатор заказа.
+            </summary>
+        </member>
+        <member name="P:OrderItem.DishID">
+            <summary>
+            Получает или задаёт идентификатор блюда.
+            </summary>
+        </member>
+        <member name="P:OrderItem.Quantity">
+            <summary>
+            Получает или задаёт количество блюд.
+            </summary>
+        </member>
+        <member name="M:OrderItem.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Инициализирует новый экземпляр класса OrderItem.
+            </summary>
+            <param name="orderItemId">Уникальный идентификатор позиции.</param>
+            <param name="orderId">Идентификатор заказа.</param>
+            <param name="dishId">Идентификатор блюда.</param>
+            <param name="quantity">Количество.</param>
+        </member>
+        <member name="M:OrderItem.ToString">
+            <summary>
+            Возвращает строковое представление позиции заказа.
+            </summary>
+            <returns>Строка с информацией о позиции.</returns>
+        </member>
+        <member name="T:PizzaRepository">
+            <summary>
+            Представляет репозиторий для работы с данными пиццерии.
+            </summary>
+        </member>
+        <member name="P:PizzaRepository.Clients">
+            <summary>
+            Получает или задаёт список клиентов.
+            </summary>
+        </member>
+        <member name="P:PizzaRepository.Orders">
+            <summary>
+            Получает или задаёт список заказов.
+            </summary>
+        </member>
+        <member name="P:PizzaRepository.OrderItems">
+            <summary>
+            Получает или задаёт список позиций заказов.
+            </summary>
+        </member>
+        <member name="P:PizzaRepository.Menu">
+            <summary>
+            Получает или задаёт список блюд меню.
+            </summary>
+        </member>
+        <member name="M:PizzaRepository.#ctor">
+            <summary>
+            Инициализирует новый экземпляр класса PizzaRepository.
+            </summary>
+        </member>
+        <member name="M:PizzaRepository.LoadData">
+            <summary>
+            Загружает данные из Excel-файла.
+            </summary>
+        </member>
+        <member name="M:PizzaRepository.LoadClients(Aspose.Cells.Workbook)">
+            <summary>
+            Загружает клиентов из Excel-файла.
+            </summary>
+            <param name="workbook">Книга Excel.</param>
+        </member>
+        <member name="M:PizzaRepository.LoadOrders(Aspose.Cells.Workbook)">
+            <summary>
+            Загружает заказы из Excel-файла.
+            </summary>
+            <param name="workbook">Книга Excel.</param>
+        </member>
+        <member name="M:PizzaRepository.LoadOrderItems(Aspose.Cells.Workbook)">
+            <summary>
+            Загружает позиции заказов из Excel-файла.
+            </summary>
+            <param name="workbook">Книга Excel.</param>
+        </member>
+        <member name="M:PizzaRepository.LoadMenu(Aspose.Cells.Workbook)">
+            <summary>
+            Загружает меню из Excel-файла.
+            </summary>
+            <param name="workbook">Книга Excel.</param>
+        </member>
+        <member name="M:PizzaRepository.CreateTestDB">
+            <summary>
+            Создаёт тестовую базу данных.
+            </summary>
+        </member>
+        <member name="M:PizzaRepository.GetClientsFromPerm">
+            <summary>
+            Получает список клиентов из Перми.
+            </summary>
+            <returns>Список клиентов из Перми.</returns>
+        </member>
+        <member name="M:PizzaRepository.GetOrdersWithClientInfo">
+            <summary>
+            Получает список невыполненных заказов с информацией о клиентах.
+            </summary>
+            <returns>Список строк с информацией о заказах.</returns>
+        </member>
+        <member name="M:PizzaRepository.GetTotalDeliveredOrdersIncome">
+            <summary>
+            Получает общий доход от выполненных заказов.
+            </summary>
+            <returns>Общий доход.</returns>
+        </member>
+        <member name="M:PizzaRepository.GetAverageItemsPerOrder">
+            <summary>
+            Получает среднее количество позиций в заказе.
+            </summary>
+            <returns>Среднее количество позиций.</returns>
+        </member>
+        <member name="M:PizzaRepository.RemoveClient(System.Int32)">
+            <summary>
+            Удаляет клиента и все связанные с ним заказы.
+            </summary>
+            <param name="clientId">Идентификатор клиента.</param>
+            <returns>true, если удаление выполнено успешно; иначе false.</returns>
+        </member>
+        <member name="M:PizzaRepository.AddClient(Client)">
+            <summary>
+            Добавляет нового клиента.
+            </summary>
+            <param name="client">Клиент для добавления.</param>
+        </member>
+        <member name="M:PizzaRepository.RemoveOrder(System.Int32)">
+            <summary>
+            Удаляет заказ и все связанные с ним позиции.
+            </summary>
+            <param name="orderId">Идентификатор заказа.</param>
+            <returns>true, если удаление выполнено успешно; иначе false.</returns>
+        </member>
+        <member name="M:PizzaRepository.AddOrder(Order)">
+            <summary>
+            Добавляет новый заказ.
+            </summary>
+            <param name="order">Заказ для добавления.</param>
+            <exception cref="T:System.ArgumentException">Выбрасывается, если клиент не существует.</exception>
+        </member>
+        <member name="M:PizzaRepository.RemoveMenuItem(System.Int32)">
+            <summary>
+            Удаляет блюдо из меню и все связанные с ним позиции заказов.
+            </summary>
+            <param name="dishId">Идентификатор блюда.</param>
+            <returns>true, если удаление выполнено успешно; иначе false.</returns>
+        </member>
+        <member name="M:PizzaRepository.AddMenuItem(Menu)">
+            <summary>
+            Добавляет новое блюдо в меню.
+            </summary>
+            <param name="menuItem">Блюдо для добавления.</param>
+        </member>
+        <member name="M:PizzaRepository.RemoveOrderItem(System.Int32)">
+            <summary>
+            Удаляет позицию заказа.
+            </summary>
+            <param name="orderItemId">Идентификатор позиции.</param>
+            <returns>true, если удаление выполнено успешно; иначе false.</returns>
+        </member>
+        <member name="M:PizzaRepository.AddOrderItem(OrderItem)">
+            <summary>
+            Добавляет новую позицию в заказ.
+            </summary>
+            <param name="orderItem">Позиция заказа для добавления.</param>
+            <exception cref="T:System.ArgumentException">Выбрасывается, если заказ или блюдо не существуют.</exception>
+        </member>
+        <member name="M:PizzaRepository.SaveToExcel">
+            <summary>
+            Сохраняет текущие данные в Excel-файл.
+            </summary>
+        </member>
+        <member name="M:PizzaRepository.SaveClientsSheet(Aspose.Cells.Workbook)">
+            <summary>
+            Сохраняет лист клиентов.
+            </summary>
+            <param name="workbook">Книга Excel.</param>
+        </member>
+        <member name="M:PizzaRepository.SaveOrdersSheet(Aspose.Cells.Workbook)">
+            <summary>
+            Сохраняет лист заказов.
+            </summary>
+            <param name="workbook">Книга Excel.</param>
+        </member>
+        <member name="M:PizzaRepository.SaveOrderItemsSheet(Aspose.Cells.Workbook)">
+            <summary>
+            Сохраняет лист состава заказов.
+            </summary>
+            <param name="workbook">Книга Excel.</param>
+        </member>
+        <member name="M:PizzaRepository.SaveMenuSheet(Aspose.Cells.Workbook)">
+            <summary>
+            Сохраняет лист меню.
+            </summary>
+            <param name="workbook">Книга Excel.</param>
+        </member>
+        <member name="T:Program">
+            <summary>
+            Главный класс программы.
+            </summary>
+        </member>
+        <member name="M:Program.Main(System.String[])">
+            <summary>
+            Точка входа в программу.
+            </summary>
+            <param name="args">Аргументы командной строки.</param>
+        </member>
+        <member name="M:Program.ShowMainMenu">
+            <summary>
+            Отображает главное меню.
+            </summary>
+        </member>
+        <member name="M:Program.ViewDatabase">
+            <summary>
+            Отображает базу данных для просмотра.
+            </summary>
+        </member>
+        <member name="M:Program.DeleteItems">
+            <summary>
+            Удаляет объекты из базы данных.
+            </summary>
+        </member>
+        <member name="M:Program.DeleteEntity(System.String,System.Func{System.Int32,System.Boolean},System.String,System.String)">
+            <summary>
+            Универсальный метод для удаления сущности по идентификатору.
+            </summary>
+            <param name="entityName">Название идентификатора для вывода.</param>
+            <param name="removeAction">Действие удаления.</param>
+            <param name="successMessage">Сообщение при успешном удалении.</param>
+            <param name="notFoundMessage">Сообщение при отсутствии сущности.</param>
+        </member>
+        <member name="M:Program.AddItems">
+            <summary>
+            Добавляет объекты в базу данных.
+            </summary>
+        </member>
+        <member name="M:Program.AddClient">
+            <summary>
+            Добавляет нового клиента.
+            </summary>
+        </member>
+        <member name="M:Program.AddOrder">
+            <summary>
+            Добавляет новый заказ.
+            </summary>
+        </member>
+        <member name="M:Program.AddMenuItem">
+            <summary>
+            Добавляет новое блюдо в меню.
+            </summary>
+        </member>
+        <member name="M:Program.AddOrderItem">
+            <summary>
+            Добавляет новую позицию в заказ.
+            </summary>
+        </member>
+        <member name="M:Program.ExecuteQueries">
+            <summary>
+            Выполняет запросы и отображает отчёты.
+            </summary>
+        </member>
+    </members>
+</doc>
